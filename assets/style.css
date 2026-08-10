@@ -1,0 +1,944 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg: #0F1016;
+    --bg-panel: #171922;
+    --bg-dark: #07080B;
+    --gold: #C5A880;
+    --silk: #EBE9E6;
+    --white: #FFFFFF;
+    --text: #E5E2DE;
+    --text-muted: #9598A1;
+    --border: 1px solid rgba(197, 168, 128, 0.15);
+    --border-strong: 1px solid #C5A880;
+    --font-mono: 'JetBrains Mono', monospace;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Lemora dial lines background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.015;
+    background-image: 
+        radial-gradient(var(--gold) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1000;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 2px;
+}
+
+/* Slim Header with Dot separators */
+.topbar {
+    width: 100%;
+    background: var(--bg-dark);
+    border-bottom: var(--border);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.brand span {
+    color: var(--gold);
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Dot separated navigation - NO BRACKETS */
+.topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar nav a {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+}
+
+.topbar nav a::after {
+    content: '  •';
+    margin-left: 15px;
+    color: rgba(197, 168, 128, 0.25);
+}
+
+.topbar nav a:last-child::after {
+    content: '';
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+    color: var(--silk);
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+/* Slim action link button */
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    gap: 8px;
+}
+
+.cta-link:hover {
+    color: var(--silk);
+}
+
+/* Main Layout */
+main {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 40px auto 0;
+    padding: 0 20px 80px;
+}
+
+/* Lemora Hero Slider Section */
+.hero {
+    position: relative;
+    height: 580px;
+    margin-bottom: 80px;
+    border: var(--border);
+    padding: 8px;
+    background: var(--bg-panel);
+    border-radius: 4px;
+}
+
+.hero-bg-frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2px;
+}
+
+.hero-bg-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay-card {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 480px;
+    background: var(--bg-panel);
+    border: var(--border);
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.hero-overlay-card p.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    letter-spacing: 0.15em;
+}
+
+.hero-overlay-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 36px);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.hero-overlay-card h1 span {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-overlay-card p.description {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+/* Page Hero */
+.pagehero {
+    text-align: center;
+    padding: 60px 0;
+    border-bottom: var(--border);
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pagehero p.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.pagehero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.pagehero p.desc {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+/* IMAGE SECTION 1: Asymmetric Offset Cards Grid */
+.offset-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 140px;
+    align-items: flex-start;
+}
+
+.offset-card {
+    background: var(--bg-panel);
+    border: var(--border);
+    padding: 10px;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.offset-card.left {
+    transform: translateY(60px);
+}
+
+.offset-card img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.offset-card-content {
+    padding: 30px 20px 20px;
+}
+
+.offset-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.offset-card p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header p.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--white);
+}
+
+/* IMAGE SECTION 2: Horizon Wide-Banner Grid */
+.horizon-banner {
+    position: relative;
+    height: 380px;
+    margin-bottom: 80px;
+    border: var(--border);
+    padding: 8px;
+    background: var(--bg-panel);
+    border-radius: 4px;
+}
+
+.horizon-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.horizon-content-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: rgba(15, 16, 22, 0.4);
+}
+
+.horizon-content-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 15px;
+    max-width: 680px;
+}
+
+.horizon-content-overlay p {
+    color: var(--silk);
+    font-size: 14px;
+    max-width: 580px;
+    margin-bottom: 25px;
+}
+
+/* Dial Stat Grid (Separator 1) */
+.dial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.dial-card {
+    background: var(--bg-panel);
+    border: var(--border);
+    padding: 35px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dial-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.dial-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.dial-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Parchment Metrics Table (Separator 2) */
+.table-container {
+    margin-bottom: 80px;
+}
+
+.metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: var(--border);
+}
+
+.metrics-table th,
+.metrics-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: var(--border);
+}
+
+.metrics-table th {
+    background: var(--bg-panel);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+}
+
+.metrics-table td {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.metrics-table tr:hover td {
+    color: var(--white);
+    background: rgba(197, 168, 128, 0.05);
+}
+
+/* IMAGE SECTION 3: The Editorial Detail Cards */
+.editorial-detail-block {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+    border-bottom: var(--border);
+    padding-bottom: 60px;
+}
+
+.editorial-detail-text {
+    padding-right: 40px;
+}
+
+.editorial-detail-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.editorial-detail-text p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.editorial-detail-frame {
+    border: var(--border);
+    padding: 8px;
+    background: var(--bg-panel);
+    border-radius: 4px;
+}
+
+.editorial-detail-frame img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+/* Dynamic Tabbed Collection (AVONE STYLE) */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px 16px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+/* Tab contents grid */
+.tab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.tab-card {
+    background: var(--bg-panel);
+    border: var(--border);
+    padding: 25px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tab switching anim classes */
+.tab-card.tab-hiding {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.tab-card-img {
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.tab-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tab-card span.meta {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.tab-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.tab-card p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.tab-card a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gold);
+}
+
+/* Standard columns (About layouts) */
+.split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.split-col {
+    background: var(--bg-panel);
+    border: var(--border);
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.split-col h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 15px;
+    border-bottom: var(--border);
+    padding-bottom: 8px;
+}
+
+.split-col p {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Contact layout */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+}
+
+.contact-details {
+    margin-top: 40px;
+}
+
+.contact-details-item {
+    margin-bottom: 30px;
+    border-left: 2px solid var(--gold);
+    padding-left: 18px;
+}
+
+.contact-details-item h4 {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.contact-form {
+    background: var(--bg-panel);
+    border: var(--border);
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: var(--border);
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 3px;
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+}
+
+.submit-btn {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 12px 24px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 11px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+}
+
+.form-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 15px;
+}
+
+/* Article page */
+.article-container {
+    max-width: 800px;
+    margin: 40px auto 100px;
+}
+
+.article-header {
+    border-bottom: var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.article-header .back-link {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.article-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4.5vw, 38px);
+    color: var(--white);
+    line-height: 1.25;
+}
+
+.article-lead {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    border-left: 2px solid var(--gold);
+    padding-left: 22px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.article-content section {
+    margin-bottom: 40px;
+}
+
+.article-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 15px;
+    border-bottom: var(--border);
+    padding-bottom: 8px;
+}
+
+.article-content p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.article-footer {
+    border-top: var(--border);
+    padding-top: 30px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Policy Content */
+.policy-container {
+    max-width: 800px;
+    margin: 40px auto 100px;
+}
+
+.policy-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.policy-content p {
+    margin-bottom: 18px;
+    color: var(--text-muted);
+}
+
+/* Charcoal Footer */
+footer {
+    background-color: var(--bg-dark);
+    border-top: var(--border);
+    padding: 80px 40px 40px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    max-width: var(--max-width);
+    margin: 0 auto 50px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.footer-brand p {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 280px;
+}
+
+.footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer-col a {
+    color: var(--text-muted);
+}
+
+.footer-col a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Scroll reveal triggers */
+.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js [data-reveal].reveal-seen {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive grids */
+@media (max-width: 992px) {
+    .hero {
+        height: auto;
+    }
+    .hero-overlay-card {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding: 30px;
+    }
+    .offset-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .offset-card.left {
+        transform: translateY(0);
+    }
+    .offset-card img {
+        height: 320px;
+    }
+    .horizon-banner {
+        height: auto;
+    }
+    .horizon-content-overlay {
+        position: static;
+        background: var(--bg-panel);
+    }
+    .editorial-detail-block {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .editorial-detail-frame img {
+        height: 280px;
+    }
+    .dial-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        padding: 15px 20px;
+    }
+    .topbar nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-panel);
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        border-bottom: var(--border);
+    }
+    .topbar.nav-open nav {
+        display: flex;
+    }
+    .menu {
+        display: block;
+    }
+    .dial-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
