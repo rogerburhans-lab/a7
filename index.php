@@ -83,7 +83,7 @@
                         </div>
                         <!-- Header Search Form Box End -->
 
-                        <!-- Header Action Details Start (FIXED: Placed in action box instead of topbar) -->
+                        <!-- Header Action Details Start -->
                         <div class="header-action-details d-none d-lg-block">
                             <ul>
                                 <li><a href="contact.html"><i class="fa-regular fa-user"></i> Account</a></li>
@@ -126,7 +126,7 @@
     <!-- Hero Section Start -->
     <div class="hero">
         <div class="container">
-            <div class="row align-items-end">
+            <div class="row align-items-center">
                 <div class="col-lg-8">
                     <!-- Section Title Start -->
                     <div class="section-title">
@@ -151,10 +151,10 @@
     <!-- About Us Section Start -->
     <div class="about-us">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
-                    <div class="section-title">
+                    <div class="section-title mb-lg-0">
                         <span class="section-sub-title">About Us</span>
                         <h2>Creating watches that blend innovation</h2>
                     </div>
@@ -163,7 +163,7 @@
 
                 <div class="col-lg-6">
                     <!-- Section Title Content Start -->
-                    <div class="section-title-content mt-4 mt-lg-0">
+                    <div class="section-title-content">
                         <p>We are committed to creating watches that seamlessly blend modern innovation with timeless craftsmanship. By combining advanced technology, premium materials, and thoughtful design, each timepiece is built to deliver precision, durability, and a refined aesthetic.</p>
                     </div>
                     <!-- Section Title Content End -->
@@ -393,7 +393,7 @@
                             </div>
                         </div>
 			            <!-- Satisfy Client Images End -->    
-			            <p>Let's make something great work together. <a href="blog.html" style="color: var(--primary-color); font-weight: 700;">View our Collection</a></p>
+			            <p>Let's make something great work together. <a href="blog.html" style="color: var(--accent-color); font-weight: 700;">View our Collection</a></p>
 		            </div>
 		            <!-- Section Footer Text End -->
                 </div>
@@ -405,10 +405,10 @@
     <!-- Our Product Section Start -->
     <div class="our-products">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
-                    <div class="section-title">
+                    <div class="section-title mb-lg-0">
                         <span class="section-sub-title">Best Products</span>
                         <h2>Timeless watches design for modern living</h2>
                     </div>
@@ -417,8 +417,8 @@
 
                 <div class="col-lg-6">
                     <!-- Section Content Button Start -->
-                    <div class="section-content-btn mt-4 mt-lg-0">
-                        <p style="color: var(--text-muted); margin-bottom: 20px;">Crafted with precision and elegance, our watches blend timeless design with modern functionality to complement every lifestyle.</p>
+                    <div class="section-content-btn">
+                        <p style="color: var(--text-color); margin-bottom: 20px;">Crafted with precision and elegance, our watches blend timeless design with modern functionality to complement every lifestyle.</p>
                         <a href="blog.html" class="btn-default">View All Products</a>
                     </div>   
                     <!-- Section Content Button End -->
@@ -609,7 +609,7 @@
                             </div>
                         </div>
 			            <!-- Satisfy Client Images End -->    
-			            <p>Let's make something great work together. <a href="contact.html" style="color: var(--primary-color); font-weight: 700;">Get Free Quote</a></p>
+			            <p>Let's make something great work together. <a href="contact.html" style="color: var(--accent-color); font-weight: 700;">Get Free Quote</a></p>
 		            </div>
 		            <!-- Section Footer Text End -->
                 </div>
@@ -625,7 +625,7 @@
                 <div class="col-lg-12 p-0">
                     <div class="intro-video-content-box">
                         <div class="intro-video-bg-video">
-                            <img src="assets/img/video_bg.jpg" alt="Watchmaking Workbench background" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            <img src="assets/img/video_bg.jpg" alt="Watchmaking Workbench background" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="video-play-button">
                             <a href="contact.html"><i class="fa-solid fa-play"></i></a>
@@ -700,7 +700,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-footer-text text-center mt-4">
-                        <p><span>Free</span> Explore the World's Finest Watch Brands - <a href="blog.html" style="color: var(--primary-color); font-weight: 700;">Find Your Perfect Match Today</a></p>
+                        <p><span>Free</span> Explore the World's Finest Watch Brands - <a href="blog.html" style="color: var(--accent-color); font-weight: 700;">Find Your Perfect Match Today</a></p>
                     </div>
                 </div>
             </div>
@@ -711,17 +711,17 @@
     <!-- New Arrivals Section Start -->
     <div class="new-arrivals">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
-                    <div class="section-title">
+                    <div class="section-title mb-lg-0">
                         <span class="section-sub-title">New Arrivals</span>
                         <h2>Introducing new watches that redefine modern</h2>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="section-content-btn mt-4 mt-lg-0">
-                        <p style="color: var(--text-muted); margin-bottom: 20px;">Crafted with attention to detail, these watches are made to complement your style while offering lasting quality.</p>
+                    <div class="section-content-btn">
+                        <p style="color: var(--text-color); margin-bottom: 20px;">Crafted with attention to detail, these watches are made to complement your style while offering lasting quality.</p>
                         <a href="blog.html" class="btn-default">View All Arrivals</a>
                     </div>
                 </div>
