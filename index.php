@@ -38,23 +38,12 @@
     <div class="topbar">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-12 text-center">
                     <!-- Topbar Content Information Start -->
-                    <div class="topbar-content-info text-center text-lg-start">
+                    <div class="topbar-content-info">
                         <p><i class="fa-regular fa-clock"></i> Get a Flat 10% Off on All Watches - Limited Time Only</p>
                     </div>
                     <!-- Topbar Content Information End -->
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <!-- Header Action Details Start -->
-                    <div class="header-action-details">
-                        <ul>
-                            <li><a href="contact.html"><i class="fa-regular fa-user"></i> Account</a></li>
-                            <li><a href="contact.html"><i class="fa-regular fa-heart"></i> Wishlist</a></li>
-                            <li><a href="blog.html"><i class="fa-solid fa-basket-shopping"></i> Cart</a></li>
-                        </ul>
-                    </div>
-                    <!-- Header Action Details End -->
                 </div>
             </div>
         </div>
@@ -93,6 +82,16 @@
                             <!-- Header Search Form End -->
                         </div>
                         <!-- Header Search Form Box End -->
+
+                        <!-- Header Action Details Start (FIXED: Placed in action box instead of topbar) -->
+                        <div class="header-action-details d-none d-lg-block">
+                            <ul>
+                                <li><a href="contact.html"><i class="fa-regular fa-user"></i> Account</a></li>
+                                <li><a href="contact.html"><i class="fa-regular fa-heart"></i> Wishlist</a></li>
+                                <li><a href="blog.html"><i class="fa-solid fa-basket-shopping"></i> Cart</a></li>
+                            </ul>
+                        </div>
+                        <!-- Header Action Details End -->
                     </div>
 
                     <!-- Main Menu Start -->
@@ -208,7 +207,7 @@
                             <!-- About Category Item Image Start -->
                             <div class="about-category-item-image">
                                 <figure>
-                                    <img src="assets/img/hero.jpg" alt="Watches For Him">
+                                    <img src="assets/img/about_him.jpg" alt="Watches For Him">
                                 </figure>
                             </div>
                             <!-- About Category Item Image End -->
@@ -238,7 +237,7 @@
                             <!-- About Category Item Image Start -->
                             <div class="about-category-item-image">
                                 <figure>
-                                    <img src="assets/img/design.jpg" alt="Watches For Her">
+                                    <img src="assets/img/about_her.jpg" alt="Watches For Her">
                                 </figure>
                             </div>
                             <!-- About Category Item Image End -->
@@ -292,7 +291,7 @@
                     <div class="collection-item-image">
                         <a href="blog.html">
                             <figure>
-                                <img src="assets/img/blog_quilt.jpg" alt="Sports Watches">
+                                <img src="assets/img/coll_1.jpg" alt="Sports Watches">
                             </figure>
                         </a>
                     </div>
@@ -323,7 +322,7 @@
                     <div class="collection-item-image">
                         <a href="blog.html">
                             <figure>
-                                <img src="assets/img/blog_dye.jpg" alt="Luxury Watches">
+                                <img src="assets/img/coll_2.jpg" alt="Luxury Watches">
                             </figure>
                         </a>
                     </div>
@@ -354,7 +353,7 @@
                     <div class="collection-item-image">
                         <a href="blog.html">
                             <figure>
-                                <img src="assets/img/blog_bed.jpg" alt="Chronograph Watches">
+                                <img src="assets/img/coll_3.jpg" alt="Chronograph Watches">
                             </figure>
                         </a>
                     </div>
@@ -387,7 +386,7 @@
 			            <!-- Satisfy Client Images Start -->
                         <div class="satisfy-client-images">
                             <div class="satisfy-client-image">
-                                <img src="assets/img/hero.jpg" alt="Avatar">
+                                <img src="assets/img/about_him.jpg" alt="Avatar">
                             </div>
                             <div class="satisfy-client-image add-more">
                                 <i class="fa-solid fa-phone"></i>
@@ -432,7 +431,7 @@
                     <div class="product-item-header">
                         <div class="product-item-image">
                             <a href="blog.html">
-                                <img src="assets/img/blog_cotton.jpg" alt="Classic Silver Dial Watch">
+                                <img src="assets/img/prod_1.jpg" alt="Classic Silver Dial Watch">
                             </a>
                         </div>
                     </div>
@@ -460,7 +459,7 @@
                     <div class="product-item-header">
                         <div class="product-item-image">
                             <a href="blog.html">
-                                <img src="assets/img/blog_stitching.jpg" alt="Black Chronograph Pro">
+                                <img src="assets/img/prod_2.jpg" alt="Black Chronograph Pro">
                             </a>
                         </div>
                     </div>
@@ -488,7 +487,7 @@
                     <div class="product-item-header">
                         <div class="product-item-image">
                             <a href="blog.html">
-                                <img src="assets/img/blog_tensile.jpg" alt="Automatic Skeleton Watch">
+                                <img src="assets/img/prod_3.jpg" alt="Automatic Skeleton Watch">
                             </a>
                         </div>
                     </div>
@@ -516,7 +515,7 @@
                     <div class="product-item-header">
                         <div class="product-item-image">
                             <a href="blog.html">
-                                <img src="assets/img/blog_harvest.jpg" alt="Aurex Royal Gold Edition">
+                                <img src="assets/img/prod_4.jpg" alt="Aurex Royal Gold Edition">
                             </a>
                         </div>
                     </div>
@@ -544,7 +543,7 @@
                     <div class="product-item-header">
                         <div class="product-item-image">
                             <a href="blog.html">
-                                <img src="assets/img/blog_wool.jpg" alt="Titan Smartwatch Pro">
+                                <img src="assets/img/prod_5.jpg" alt="Titan Smartwatch Pro">
                             </a>
                         </div>
                     </div>
@@ -572,7 +571,7 @@
                     <div class="product-item-header">
                         <div class="product-item-image">
                             <a href="blog.html">
-                                <img src="assets/img/blog_finish.jpg" alt="ChronoX Ultra Smart">
+                                <img src="assets/img/prod_6.jpg" alt="ChronoX Ultra Smart">
                             </a>
                         </div>
                     </div>
@@ -603,7 +602,7 @@
 			            <!-- Satisfy Client Images Start -->
                         <div class="satisfy-client-images">
                             <div class="satisfy-client-image">
-                                <img src="assets/img/hero.jpg" alt="Avatar">
+                                <img src="assets/img/about_her.jpg" alt="Avatar">
                             </div>
                             <div class="satisfy-client-image add-more">
                                 <i class="fa-solid fa-phone"></i>
@@ -626,7 +625,7 @@
                 <div class="col-lg-12 p-0">
                     <div class="intro-video-content-box">
                         <div class="intro-video-bg-video">
-                            <img src="assets/img/blog_loom.jpg" alt="Watchmaking Workbench background" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            <img src="assets/img/video_bg.jpg" alt="Watchmaking Workbench background" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                         </div>
                         <div class="video-play-button">
                             <a href="contact.html"><i class="fa-solid fa-play"></i></a>
@@ -654,7 +653,7 @@
             <div class="row-brands">
                 <div class="brand-item">
                     <div class="brand-item-image">
-                        <figure><img src="assets/img/blog_drape.jpg" alt="Aurex"></figure>
+                        <figure><img src="assets/img/brand_1.jpg" alt="Aurex"></figure>
                     </div>
                     <div class="brand-item-logo">
                         <h4>Aurex</h4>
@@ -663,7 +662,7 @@
                 
                 <div class="brand-item">
                     <div class="brand-item-image">
-                        <figure><img src="assets/img/blog_quilt.jpg" alt="ChronoX"></figure>
+                        <figure><img src="assets/img/brand_2.jpg" alt="ChronoX"></figure>
                     </div>
                     <div class="brand-item-logo">
                         <h4>ChronoX</h4>
@@ -672,7 +671,7 @@
 
                 <div class="brand-item">
                     <div class="brand-item-image">
-                        <figure><img src="assets/img/blog_bed.jpg" alt="Titan"></figure>
+                        <figure><img src="assets/img/brand_3.jpg" alt="Titan"></figure>
                     </div>
                     <div class="brand-item-logo">
                         <h4>Titan</h4>
@@ -681,7 +680,7 @@
 
                 <div class="brand-item">
                     <div class="brand-item-image">
-                        <figure><img src="assets/img/design.jpg" alt="Royal"></figure>
+                        <figure><img src="assets/img/brand_4.jpg" alt="Royal"></figure>
                     </div>
                     <div class="brand-item-logo">
                         <h4>Royal</h4>
@@ -690,7 +689,7 @@
 
                 <div class="brand-item">
                     <div class="brand-item-image">
-                        <figure><img src="assets/img/hero.jpg" alt="Elite"></figure>
+                        <figure><img src="assets/img/brand_5.jpg" alt="Elite"></figure>
                     </div>
                     <div class="brand-item-logo">
                         <h4>Elite</h4>
@@ -733,7 +732,7 @@
                     <div class="new-arrival-item-image">
                         <a href="blog.html">
                             <figure>
-                                <img src="assets/img/blog_drape.jpg" alt="Royal Chrono Masterpiece">
+                                <img src="assets/img/arrival_1.jpg" alt="Royal Chrono Masterpiece">
                             </figure>
                         </a>
                     </div>
@@ -749,7 +748,7 @@
                     <div class="new-arrival-item-image">
                         <a href="blog.html">
                             <figure>
-                                <img src="assets/img/blog_harvest.jpg" alt="Classic Gold Heritage">
+                                <img src="assets/img/arrival_2.jpg" alt="Classic Gold Heritage">
                             </figure>
                         </a>
                     </div>
@@ -765,7 +764,7 @@
                     <div class="new-arrival-item-image">
                         <a href="blog.html">
                             <figure>
-                                <img src="assets/img/blog_packing.jpg" alt="Elite Black Edition Watch">
+                                <img src="assets/img/arrival_3.jpg" alt="Elite Black Edition Watch">
                             </figure>
                         </a>
                     </div>
@@ -804,15 +803,15 @@
             
             <div class="latest-update-video-list">
                 <div class="latest-update-video">
-                    <img src="assets/img/blog_wool.jpg" alt="Social Update 1">
+                    <img src="assets/img/social_1.jpg" alt="Social Update 1">
                 </div>
                 
                 <div class="latest-update-video">
-                    <img src="assets/img/blog_tensile.jpg" alt="Social Update 2">
+                    <img src="assets/img/social_2.jpg" alt="Social Update 2">
                 </div>
                 
                 <div class="latest-update-video">
-                    <img src="assets/img/blog_finish.jpg" alt="Social Update 3">
+                    <img src="assets/img/social_3.jpg" alt="Social Update 3">
                 </div>
             </div>
         </div>
