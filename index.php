@@ -26,13 +26,6 @@
 </head>
 <body>
 
-    <!-- Preloader Start -->
-	<div class="preloader" id="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
 
     <!-- Topbar Section Start -->
     <div class="topbar">
@@ -618,24 +611,6 @@
     </div>
     <!-- Our Product Section End -->
 
-    <!-- Intro Video Section Start -->
-    <div class="intro-video">
-        <div class="container-fluid p-0">
-            <div class="row m-0">
-                <div class="col-lg-12 p-0">
-                    <div class="intro-video-content-box">
-                        <div class="intro-video-bg-video">
-                            <img src="assets/img/video_bg.jpg" alt="Watchmaking Workbench background" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="video-play-button">
-                            <a href="contact.html"><i class="fa-solid fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Intro Video Section End -->
     
     <!-- Our Brands Section Start -->
     <div class="our-brands">

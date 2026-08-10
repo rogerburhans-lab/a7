@@ -61,22 +61,7 @@ a {
 
 /* Preloader */
 .preloader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1000;
-	background: var(--bg-color);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.preloader.fade-out {
-	opacity: 0;
-	visibility: hidden;
+	display: none !important;
 }
 
 .loading-container {
@@ -432,16 +417,17 @@ header.main-header .header-sticky {
 	color: var(--accent-color);
 }
 
+.navbar {
+	flex-wrap: wrap !important;
+}
+
 /* Main Menu */
 .main-menu {
 	width: 100%;
 	background: var(--secondary-color);
 	border-top: 1px solid var(--divider-color);
 	margin-top: 15px;
-	padding: 12px 0;
-}
-
-.main-menu .navbar-collapse {
+	padding: 12px 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
