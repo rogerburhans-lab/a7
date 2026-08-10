@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Terms of Service | Wrist Vista Journal</title>
     <meta name="description" content="Terms of service for Wrist Vista Journal.">
-    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LY0HY7L01"></script>
     <script>
@@ -17,18 +19,95 @@
     </script>
 </head>
 <body>
-    <header class="topbar">
-        <a class="brand" href="index.php">
-            Wrist Vista <span>Journal</span>
-        </a>
-        <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="about.html">Atelier Craft</a>
-            <a href="blog.html">Watch Logs</a>
-            <a href="contact.html">Curator Desk</a>
-        </nav>
-    </header>
+    <!-- Topbar Section Start -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <!-- Topbar Content Information Start -->
+                    <div class="topbar-content-info text-center text-lg-start">
+                        <p><i class="fa-regular fa-clock"></i> Get a Flat 10% Off on All Watches - Limited Time Only</p>
+                    </div>
+                    <!-- Topbar Content Information End -->
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <!-- Header Action Details Start -->
+                    <div class="header-action-details">
+                        <ul>
+                            <li><a href="contact.html"><i class="fa-regular fa-user"></i> Account</a></li>
+                            <li><a href="contact.html"><i class="fa-regular fa-heart"></i> Wishlist</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-basket-shopping"></i> Cart</a></li>
+                        </ul>
+                    </div>
+                    <!-- Header Action Details End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar Section End -->
+
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg p-0">
+                    <div class="header-action-box">
+                        <!-- Logo Start -->
+                        <a class="navbar-brand" href="index.php">
+                            Wrist Vista <span>Journal</span>
+                        </a>
+                        <!-- Logo End -->
+                        
+                        <!-- Header Search Form Box Start -->
+                        <div class="header-search-form-box d-none d-lg-block">
+                            <!-- Header Search Form Start -->
+                            <form class="header-search-form" onsubmit="return false;">
+                                <div class="header-Category-list">
+                                    <select name="service" class="form-select">
+                                        <option value="" disabled selected>All Categories</option>
+                                        <option value="sports_watches">Sports Watches</option>
+                                        <option value="Luxury_watches">Luxury Watches</option>
+                                        <option value="timeless_prestige">Timeless Prestige</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Search By Products..." required>
+                                    <button type="submit" class="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                            <!-- Header Search Form End -->
+                        </div>
+                        <!-- Header Search Form Box End -->
+                    </div>
+
+                    <!-- Main Menu Start -->
+                    <div class="main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul>
+                                <li><a href="index.php">Home</a></li>                                
+                                <li><a href="about.html">Atelier Craft</a></li>
+                                <li><a href="blog.html">Watch Logs</a></li>
+                                <li><a href="contact.html">Curator Desk</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Header Contact Info Start -->
+                        <div class="header-contact-info d-none d-md-flex">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="header-contact-info-content">
+                                <p>Get Support</p>
+                                <span><a href="tel:+1-888-777-5845">+1-888-777-5845</a></span>
+                            </div>
+                        </div>
+                        <!-- Header Contact Info End -->
+                    </div>                
+                </nav>
+            </div>
+		</div>
+	</header>
+	<!-- Header End -->
 
     <main class="policy-container">
         <!-- Page Hero (Compulsory immediately after Header) -->
@@ -62,36 +141,38 @@
     </main>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>Wrist Vista Journal</h3>
-                <p>Independent research and logs for artisan carry textiles, organic plant dye chemistry, and academic bag ergonomics.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Wrist Vista Journal</h3>
+                    <p>Independent research and logs for artisan carry textiles, organic plant dye chemistry, and academic bag ergonomics.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="about.html">Atelier Craft</a></li>
+                        <li><a href="blog.html">Watch Logs</a></li>
+                        <li><a href="contact.html">Curator Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>181 Mercer Street, New York, NY 10012, United States</p>
+                    <p><a href="tel:+1-888-777-5845">+1-888-777-5845</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookies Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="about.html">Atelier Craft</a></li>
-                    <li><a href="blog.html">Watch Logs</a></li>
-                    <li><a href="contact.html">Curator Desk</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wrist Vista Journal. Independent scholarly carry archive, not a retail shop.</p>
             </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>181 Mercer Street, New York, NY 10012, United States</p>
-                <p><a href="tel:+1-888-777-5845">+1-888-777-5845</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>Policies</h4>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="cookies.html">Cookies Policy</a></li>
-                    <li><a href="disclaimer.html">Disclaimer</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Wrist Vista Journal. Independent scholarly carry archive, not a retail shop.</p>
         </div>
     </footer>
 

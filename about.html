@@ -1,10 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="zxx">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Atelier Craft | Wrist Vista Journal</title>
     <meta name="description" content="Learn about the independent horology research, fiber calibrations, and tensile test standards of Wrist Vista Journal.">
+    <!-- Bootstrap Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icon Css-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Main Custom Css -->
     <link rel="stylesheet" href="assets/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LY0HY7L01"></script>
@@ -17,120 +23,198 @@
     </script>
 </head>
 <body>
-    <header class="topbar">
-        <a class="brand" href="index.php">
-            Wrist Vista <span>Journal</span>
-        </a>
-        <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-        <nav>
-            <a href="index.php">Home</a>
-            <a class="active" href="about.html">Atelier Craft</a>
-            <a href="blog.html">Watch Logs</a>
-            <a href="contact.html">Curator Desk</a>
-        </nav>
-    </header>
+
+    <!-- Preloader Start -->
+	<div class="preloader" id="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+    <!-- Topbar Section Start -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="topbar-content-info text-center text-lg-start">
+                        <p><i class="fa-regular fa-clock"></i> Get a Flat 10% Off on All Watches - Limited Time Only</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="header-action-details">
+                        <ul>
+                            <li><a href="contact.html"><i class="fa-regular fa-user"></i> Account</a></li>
+                            <li><a href="contact.html"><i class="fa-regular fa-heart"></i> Wishlist</a></li>
+                            <li><a href="blog.html"><i class="fa-solid fa-basket-shopping"></i> Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar Section End -->
+
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg p-0">
+                    <div class="header-action-box">
+                        <a class="navbar-brand" href="index.php">
+                            Wrist Vista <span>Journal</span>
+                        </a>
+                        <div class="header-search-form-box d-none d-lg-block">
+                            <form class="header-search-form" onsubmit="return false;">
+                                <div class="header-Category-list">
+                                    <select name="service" class="form-select">
+                                        <option value="" disabled selected>All Categories</option>
+                                        <option value="sports_watches">Sports Watches</option>
+                                        <option value="Luxury_watches">Luxury Watches</option>
+                                        <option value="timeless_prestige">Timeless Prestige</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Search By Products..." required>
+                                    <button type="submit" class="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul>
+                                <li><a href="index.php">Home</a></li>                                
+                                <li><a class="active" class="active" href="about.html">Atelier Craft</a></li>
+                                <li><a href="blog.html">Watch Logs</a></li>
+                                <li><a href="contact.html">Curator Desk</a></li>
+                            </ul>
+                        </div>
+                        <div class="header-contact-info d-none d-md-flex">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="header-contact-info-content">
+                                <p>Get Support</p>
+                                <span><a href="tel:+1-888-777-5845">+1-888-777-5845</a></span>
+                            </div>
+                        </div>
+                    </div>                
+                </nav>
+            </div>
+		</div>
+	</header>
+	<!-- Header End -->
 
     <main>
-        <!-- Page Hero (Compulsory immediately after Header) -->
+        <!-- Page Hero -->
         <section class="pagehero">
-            <p class="eyebrow">[ ATELIER CRAFT // STAGE.01 ]</p>
-            <h1>An independent study of loom watch strap & leathercraft.</h1>
-            <p class="desc">We publish documented research, strap tension guides, lining loft calibrations, and abrasion test standards to support sustainable watch designers.</p>
+            <div class="container">
+                <p class="eyebrow">[ ATELIER CRAFT // STAGE.01 ]</p>
+                <h1>An independent study of loom watch strap & leathercraft.</h1>
+                <p class="lead" style="color: var(--text-color); margin-top: 15px;">We publish documented research, strap tension guides, lining loft calibrations, and abrasion test standards to support sustainable watch designers.</p>
+            </div>
         </section>
 
         <!-- Split Pillars -->
-        <section class="split">
-            <div class="split-col">
-                <h2>Linen Looming</h2>
-                <p>We investigate Belgian flax fiber counts, warp tension limits, and fabric weft density using mechanical pull testing scales to secure watch strap linings.</p>
-            </div>
-            <div class="split-col">
-                <h2>Indigo Fermentations</h2>
-                <p>We document plant-based indigo color vat temperatures, fiber absorption timelines, and dye pH level boundaries to preserve historic watch canvas.</p>
-            </div>
-            <div class="split-col">
-                <h2>Carry Ergonomics</h2>
-                <p>We reject cheap synthetic polyester bands. Every log study details fabric strap drops, inner pocket sizes, and clasp coordinates.</p>
-            </div>
-            <div class="split-col">
-                <h2>Loom Maintenance</h2>
-                <p>We analyze timber joint alignments, antique shuttle slide frictions, and treadle mechanism clearances to restore vintage carry looms.</p>
-            </div>
-        </section>
-
-        <!-- IMAGE SECTION (User layout rule): Field Studies visual panel -->
-        <section class="editorial-detail-block">
-            <div class="editorial-detail-text">
-                <p class="eyebrow">[ ATELIER LAB // WORKBENCH PROFILE ]</p>
-                <h3>Loom Mechanics & Watch Comfort Calibrations</h3>
-                <p>
-                    Our team spends weeks in mechanical workshops, cataloging loom tension loads and watch strap folding volumes. By detailing these calculations, we secure fabric durability.
-                </p>
-                <p>
-                    We believe that watch strap layouts should follow the natural shapes of the body, avoiding plastic-coated linings, synthetic fibers, or harsh chemical dyes that leak microplastics.
-                </p>
-                <a class="cta-link" href="blog.html">Browse Loom Archives &rarr;</a>
-            </div>
-            <div class="editorial-detail-frame">
-                <img src="assets/img/blog_loom.jpg" alt="Antique timber loom operator weaving dining linens in workshop">
+        <section class="container my-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="split-col">
+                        <h2 class="mb-3">Linen Looming</h2>
+                        <p>We investigate Belgian flax fiber counts, warp tension limits, and fabric weft density using mechanical pull testing scales to secure watch strap linings.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="split-col">
+                        <h2 class="mb-3">Indigo Fermentations</h2>
+                        <p>We document plant-based indigo color vat temperatures, fiber absorption timelines, and dye pH level boundaries to preserve historic watch canvas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="split-col">
+                        <h2 class="mb-3">Carry Ergonomics</h2>
+                        <p>We reject cheap synthetic polyester bands. Every log study details fabric strap drops, inner pocket sizes, and clasp coordinates.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="split-col">
+                        <h2 class="mb-3">Loom Maintenance</h2>
+                        <p>We analyze timber joint alignments, antique shuttle slide frictions, and treadle mechanism clearances to restore vintage carry looms.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Curators Team -->
-        <section style="margin-bottom: 80px; border-top: var(--border); padding-top: 60px;">
-            <div class="section-header">
-                <p class="eyebrow">[ THE ADVISORY BOARD // RESEARCH TEAM ]</p>
+        <section class="container my-5 pt-5" style="border-top: 1px solid var(--divider-color);">
+            <div class="section-title text-center mb-5">
+                <span class="section-sub-title">The Advisory Board</span>
                 <h2>Research Curators</h2>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <div style="background: var(--bg-panel); border: var(--border); padding: 30px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
-                    <div style="font-family: var(--font-mono); font-size: 9px; color: var(--gold); margin-bottom: 8px; font-weight: 700;">Textile Looming</div>
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 12px; color: var(--white);">Clara Dupont</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; line-height: 1.7; margin-bottom: 0;">Clara directs our warp tension tests, linen fiber selections, and organic indigo dye formulas.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="brand-item text-center p-4">
+                        <div class="brand-item-logo mb-3">
+                            <h4 style="font-weight: 700; color: var(--accent-color);">Clara Dupont</h4>
+                        </div>
+                        <p style="font-size: 14px; margin: 0;">Clara directs our warp tension tests, linen fiber selections, and organic indigo dye formulas.</p>
+                    </div>
                 </div>
                 
-                <div style="background: var(--bg-panel); border: var(--border); padding: 30px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
-                    <div style="font-family: var(--font-mono); font-size: 9px; color: var(--gold); margin-bottom: 8px; font-weight: 700;">Dye Chemistry</div>
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 12px; color: var(--white);">Dr. Marcus Vance</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; line-height: 1.7; margin-bottom: 0;">Marcus coordinates leather grain tanning, vegetable reduction pH, and dye fastness limits.</p>
+                <div class="col-md-4">
+                    <div class="brand-item text-center p-4">
+                        <div class="brand-item-logo mb-3">
+                            <h4 style="font-weight: 700; color: var(--accent-color);">Dr. Marcus Vance</h4>
+                        </div>
+                        <p style="font-size: 14px; margin: 0;">Marcus coordinates leather grain tanning, vegetable reduction pH, and dye fastness limits.</p>
+                    </div>
                 </div>
                 
-                <div style="background: var(--bg-panel); border: var(--border); padding: 30px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
-                    <div style="font-family: var(--font-mono); font-size: 9px; color: var(--gold); margin-bottom: 8px; font-weight: 700;">Watch Ergonomics</div>
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 12px; color: var(--white);">Silas Thorne</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; line-height: 1.7; margin-bottom: 0;">Silas reviews strap width shear balances, clasp edge stitch tolerances, and canvas waterproofing limits.</p>
+                <div class="col-md-4">
+                    <div class="brand-item text-center p-4">
+                        <div class="brand-item-logo mb-3">
+                            <h4 style="font-weight: 700; color: var(--accent-color);">Silas Thorne</h4>
+                        </div>
+                        <p style="font-size: 14px; margin: 0;">Silas reviews strap width shear balances, clasp edge stitch tolerances, and canvas waterproofing limits.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Evaluation Guidelines -->
-        <section class="dial-card" style="text-align: left; padding: 40px; margin-bottom: 80px;">
-            <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center;">
-                <div>
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.3; color: var(--white); margin-bottom: 15px; font-weight: 700;">Laboratory Standards</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; line-height: 1.8; margin-bottom: 0;">We utilize calibrated equipment to test every batch of woven watch straps and leather abrasion levels.</p>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 25px;">
-                    <div style="display: flex; gap: 20px; align-items: flex-start;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); font-weight: 700;">[01]</span>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 6px; font-weight: 700;">Leather Tensile Strength</h4>
-                            <p style="color: var(--text-muted); font-size: 12px; line-height: 1.6;">Measuring strap pull limits on mechanical tension frames to prevent shoulder strap splits under watch loads.</p>
-                        </div>
+        <!-- Laboratory Standards -->
+        <section class="container my-5 pb-5">
+            <div class="collection-item p-5 text-start">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-0">
+                        <h3 class="mb-3" style="font-size: 32px; font-weight: 700; color: var(--primary-color);">Laboratory Standards</h3>
+                        <p style="margin: 0; font-size: 15px;">We utilize calibrated equipment to test every batch of woven watch straps and leather abrasion levels.</p>
                     </div>
-                    <div style="display: flex; gap: 20px; align-items: flex-start; border-top: var(--border); padding-top: 20px;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); font-weight: 700;">[02]</span>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 6px; font-weight: 700;">Strap Abrasion Cycles</h4>
-                            <p style="color: var(--text-muted); font-size: 12px; line-height: 1.6;">Testing inner watch bands through thirty thousand rubs to verify key and pen friction resistance limits.</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 20px; align-items: flex-start; border-top: var(--border); padding-top: 20px;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); font-weight: 700;">[03]</span>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 6px; font-weight: 700;">Dye UV Colorfastness</h4>
-                            <p style="color: var(--text-muted); font-size: 12px; line-height: 1.6;">Exposing vegetable-dyed canvas panels to constant UV light beams to verify color retention margins under direct sun.</p>
+                    <div class="col-lg-7">
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex gap-3 align-items-start pb-3" style="border-bottom: 1px solid var(--divider-color);">
+                                <span style="font-weight: 700; color: var(--accent-color); font-size: 20px;">[01]</span>
+                                <div>
+                                    <h4 class="mb-1" style="font-size: 18px; font-weight: 600; color: var(--primary-color);">Leather Tensile Strength</h4>
+                                    <p class="mb-0" style="font-size: 13px; color: var(--text-color);">Measuring strap pull limits on mechanical tension frames to prevent shoulder strap splits under watch loads.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 align-items-start pb-3" style="border-bottom: 1px solid var(--divider-color);">
+                                <span style="font-weight: 700; color: var(--accent-color); font-size: 20px;">[02]</span>
+                                <div>
+                                    <h4 class="mb-1" style="font-size: 18px; font-weight: 600; color: var(--primary-color);">Strap Abrasion Cycles</h4>
+                                    <p class="mb-0" style="font-size: 13px; color: var(--text-color);">Testing inner watch bands through thirty thousand rubs to verify key and pen friction resistance limits.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 align-items-start">
+                                <span style="font-weight: 700; color: var(--accent-color); font-size: 20px;">[03]</span>
+                                <div>
+                                    <h4 class="mb-1" style="font-size: 18px; font-weight: 600; color: var(--primary-color);">Dye UV Colorfastness</h4>
+                                    <p class="mb-0" style="font-size: 13px; color: var(--text-color);">Exposing vegetable-dyed canvas panels to constant UV light beams to verify color retention margins under direct sun.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,39 +223,49 @@
     </main>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>Wrist Vista Journal</h3>
-                <p>Independent research and logs for artisan carry textiles, organic plant dye chemistry, and academic bag ergonomics.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Wrist Vista Journal</h3>
+                    <p>Independent research and logs for artisan carry textiles, organic plant dye chemistry, and academic bag ergonomics.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="about.html">Atelier Craft</a></li>
+                        <li><a href="blog.html">Watch Logs</a></li>
+                        <li><a href="contact.html">Curator Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>181 Mercer Street, New York, NY 10012, United States</p>
+                    <p><a href="tel:+1-888-777-5845">+1-888-777-5845</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookies Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="about.html">Atelier Craft</a></li>
-                    <li><a href="blog.html">Watch Logs</a></li>
-                    <li><a href="contact.html">Curator Desk</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wrist Vista Journal. Independent scholarly carry archive, not a retail shop.</p>
             </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>181 Mercer Street, New York, NY 10012, United States</p>
-                <p><a href="tel:+1-888-777-5845">+1-888-777-5845</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>Policies</h4>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="cookies.html">Cookies Policy</a></li>
-                    <li><a href="disclaimer.html">Disclaimer</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Wrist Vista Journal. Independent scholarly carry archive, not a retail shop.</p>
         </div>
     </footer>
 
     <script src="assets/app.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('fade-out');
+            }
+        });
+    </script>
 </body>
 </html>
