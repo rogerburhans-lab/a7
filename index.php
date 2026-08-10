@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Wrist Vista Journal | Luxury Watchmaking & Horology Archives</title>
-    <meta name="description" content="An independent luxury horology archive documenting mechanical watch movements, leather strap selections, and watchmaker bench ergonomics.">
+    <title>Wrist Vista Journal | Luxury Watch Store & Horology Archives</title>
+    <meta name="description" content="An independent luxury horology archive and watch showcase documenting mechanical watch movements and strap calibrations.">
     <link rel="stylesheet" href="assets/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LY0HY7L01"></script>
@@ -17,211 +17,542 @@
     </script>
 </head>
 <body>
-    <header class="topbar">
-        <a class="brand" href="index.php">
-            Wrist Vista <span>Journal</span>
-        </a>
-        <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-        <nav>
-            <a class="active" href="index.php">Home</a>
-            <a href="about.html">Atelier Craft</a>
-            <a href="blog.html">Watch Logs</a>
-            <a href="contact.html">Curator Desk</a>
-        </nav>
+
+    <!-- Preloader Start -->
+    <div class="preloader" id="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Topbar Section Start -->
+    <div class="topbar">
+        <div class="topbar-content-info">
+            <span>Get a Flat 10% Off on All Watches - Limited Time Only</span>
+        </div>
+        <div class="header-action-details">
+            <ul>
+                <li><a href="contact.html">Account</a></li>
+                <li><a href="contact.html">Wishlist</a></li>
+                <li><a href="blog.html">Cart</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Topbar Section End -->
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar">
+                <div class="header-action-box">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="index.php">
+                        Wrist Vista <span>Journal</span>
+                    </a>
+                    <!-- Logo End -->
+                    
+                    <!-- Header Search Form Box Start -->
+                    <div class="header-search-form-box">
+                        <form class="header-search-form" onsubmit="return false;">
+                            <div class="header-Category-list">
+                                <select name="service" class="form-select">
+                                    <option value="" disabled selected>All Categories</option>
+                                    <option value="sports_watches">Sports Watches</option>
+                                    <option value="Luxury_watches">Luxury Watches</option>
+                                    <option value="timeless_prestige">Timeless Prestige</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Search By Products..." required>
+                                <button type="submit" class="header-search-btn">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Header Search Form Box End -->
+                </div>
+
+                <!-- Main Menu Start -->
+                <div class="main-menu">
+                    <div class="nav-menu-wrapper">
+                        <ul>
+                            <li><a class="active" href="index.php">Home</a></li>
+                            <li><a href="about.html">Atelier Craft</a></li>
+                            <li><a href="blog.html">Watch Logs</a></li>
+                            <li><a href="contact.html">Curator Desk</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Header Contact Info Start -->
+                    <div class="header-contact-info">
+                        <div class="icon-box">☎</div>
+                        <div class="header-contact-info-content">
+                            <p>Get Support</p>
+                            <span><a href="tel:+1-888-777-5845">+1-888-777-5845</a></span>
+                        </div>
+                    </div>
+                    <!-- Header Contact Info End -->
+                </div>
+                <!-- Main Menu End -->
+            </nav>
+        </div>
     </header>
+    <!-- Header End -->
 
-    <main>
-        <!-- LEMORA HERO SLIDER Section (Immediately after Header) -->
-        <section class="hero">
-            <div class="hero-bg-frame">
-                <img src="assets/img/hero.jpg" alt="Luxury mechanical wristwatch showcasing detailed face details on display stand">
-            </div>
-            <div class="hero-overlay-card">
-                <p class="eyebrow">[ ATELIER HOROLOGY // STAGE.00 ]</p>
-                <h1>Weaving high-strength canvas straps & gear <span>seam security</span>.</h1>
-                <p class="description">We publish studies, strap abrasion limits, vegetable dye chemistry, and workshop safety guides to support sustainable watch designers.</p>
-                <div class="hero-actions">
-                    <a class="cta-link" href="blog.html">Read Watch Logs &rarr;</a>
-                    <a class="cta-link" href="about.html" style="color: var(--silk);">Explore Atelier &rarr;</a>
+    <!-- Hero Section Start -->
+    <section class="hero">
+        <div class="container">
+            <div class="row section-row">
+                <div class="section-title">
+                    <span class="section-sub-title">A Legacy of Precision</span>
+                    <h1>Timeless elegance watch collection *</h1>
+                </div>
+                <div class="section-btn">
+                    <a href="contact.html" class="btn-default btn-highlighted">Get Free Quote</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <!-- Hero Section End -->
 
-        <!-- TEXT SECTION: Immediately after Hero (Rule Compliance) -->
-        <section style="margin-bottom: 80px; padding: 60px 40px; background: var(--bg-panel); border: var(--border); border-radius: 4px; text-align: center;">
-            <p class="eyebrow" style="color: var(--gold); font-family: var(--font-mono); font-size: 10px; margin-bottom: 20px;">[ THE WRIST VISTA MANIFESTO // STAGE.00 ]</p>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; color: var(--white); margin-bottom: 25px; font-weight: 700;">The Philosophy of Luxury Horology</h2>
-            <p style="color: var(--text-muted); font-size: 15px; line-height: 1.8; max-width: 760px; margin: 0 auto 20px;">
-                We believe that the timepiece is a statement of personal art. By weaving heavy linen straps, vegetable-extracted dyes, and reinforcing leather shoulder layers, we construct watch bands that hold their structure through lifetimes of use.
-            </p>
-            <p style="color: var(--text-muted); font-size: 15px; line-height: 1.8; max-width: 760px; margin: 0 auto;">
-                Our atelier rejects synthetic polyester bands. We focus on zero-waste fiber loops, hand-waxed saddle stitching, and natural plant dye vats to maintain heritage luxury design integrity.
-            </p>
-        </section>
-
-        <!-- IMAGE SECTION 1: Asymmetric Offset Cards Grid -->
-        <section class="offset-grid">
-            <div class="offset-card left">
-                <img src="assets/img/blog_drape.jpg" alt="Aesthetic small wristwatch displaying fine watch gears casing">
-                <div class="offset-card-content">
-                    <h3>Wrist Watch Strap Calibration</h3>
-                    <p>Analyzing leather fiber load limits and welt stitches to ensure watch band durability.</p>
-                    <a class="cta-link" href="blog/purse-strap-seam-tension-tolerances.html">View study &rarr;</a>
+    <!-- About Us Section Start -->
+    <section class="about-us">
+        <div class="container">
+            <div class="row section-row" style="margin-bottom: 50px;">
+                <div class="section-title">
+                    <span class="section-sub-title">About Us</span>
+                    <h2>Creating watches that blend innovation</h2>
+                </div>
+                <div class="section-title-content">
+                    <p>We are committed to creating watches that seamlessly blend modern innovation with timeless craftsmanship. By combining advanced technology, premium materials, and thoughtful design, each timepiece is built to deliver precision, durability, and a refined aesthetic.</p>
                 </div>
             </div>
-            <div class="offset-card">
-                <img src="assets/img/design.jpg" alt="Luxury fashion watch display showcasing boutique canvas straps">
-                <div class="offset-card-content">
-                    <h3>Loom-Woven Strap Linings</h3>
-                    <p>We weave heavy organic linen lining panels directly on manual studio loom frames.</p>
-                    <a class="cta-link" href="blog/organic-handbag-weaving-density.html">View weave &rarr;</a>
+
+            <!-- About Us Items List Start -->
+            <div class="about-us-items-list">
+                <div class="about-us-item">
+                    <h2>150+</h2>
+                    <h3>Limited Edition Releases</h3>
+                    <p>Our limited edition releases are crafted in small quantities to ensure uniqueness.</p>
+                </div>
+                <div class="about-us-item">
+                    <h2>500+</h2>
+                    <h3>Premium Watch Designs</h3>
+                    <p>Our premium watch designs are crafted deliver a perfect balance of elegance.</p>
+                </div>
+                <div class="about-us-item">
+                    <h2>4.9/5</h2>
+                    <h3>Average Customer Score</h3>
+                    <p>Our high average customer rating reflects the trust and satisfaction of our customers.</p>
                 </div>
             </div>
-        </section>
+            <!-- About Us Items List End -->
 
-        <!-- SEPARATION BLOCK: Dial Stat Grid (No Image) -->
-        <section class="dial-grid">
-            <div class="dial-card">
-                <div class="dial-value">160 threads</div>
-                <div class="dial-label">Weave Thread Count</div>
-                <div class="dial-desc">Ideal thread count for heavy linen watch band durability.</div>
-            </div>
-            <div class="dial-card">
-                <div class="dial-value">280 gsm</div>
-                <div class="dial-label">Watch Canvas Weight</div>
-                <div class="dial-desc">Heavyweight protection that drapes elegantly.</div>
-            </div>
-            <div class="dial-card">
-                <div class="dial-value">10.8 pH</div>
-                <div class="dial-label">Dye Reduction pH</div>
-                <div class="dial-desc">Fermentation vat value to lock stable indigo colors.</div>
-            </div>
-        </section>
-
-        <!-- IMAGE SECTION 2: Horizon Wide-Banner Grid -->
-        <section class="horizon-banner">
-            <img class="horizon-banner-img" src="assets/img/blog_harvest.jpg" alt="Aesthetic organic fiber yarns harvest for watch strap dyeing">
-            <div class="horizon-content-overlay">
-                <p class="eyebrow" style="color: var(--gold);">[ STUDY 02 // ATELIER MATERIALS ]</p>
-                <h3>Vegetable Indigo Fermentation</h3>
-                <p>
-                    We dye our watch straps in plant-extracted indigo fermentation vats to secure lightfast organic blue hues.
-                </p>
-                <a class="cta-link" href="blog.html" style="color: var(--silk);">View Dye Logs &rarr;</a>
-            </div>
-        </section>
-
-        <!-- SEPARATION BLOCK: Parchment Bedding Metrics Table (No Image) -->
-        <section class="table-container">
-            <div class="section-header">
-                <p class="eyebrow">[ LEATHER METRICS // CALIBRATION DATA ]</p>
-                <h2>Luxury Watch Tensile & Stitching Calibration Ratings</h2>
-            </div>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Watch Band Class</th>
-                        <th>Fiber Blend</th>
-                        <th>Thread Count (sq inch)</th>
-                        <th>Strap Cushion Loft</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="color: var(--white); font-weight: 600;">Oyster Liner-160</td>
-                        <td>100% Organic Linen Canvas</td>
-                        <td>160 threads</td>
-                        <td style="color: var(--gold);">Moderate (Tension Guard)</td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--white); font-weight: 600;">Caliber Batting-100</td>
-                        <td>80% Silk, 20% Cotton batting</td>
-                        <td>100 threads</td>
-                        <td style="color: var(--gold);">Maximum (Cushion Shield)</td>
-                    </tr>
-                    <tr>
-                        <td style="color: var(--white); font-weight: 600;">Strap Core-140</td>
-                        <td>100% Waxed Flax Cordage</td>
-                        <td>140 threads</td>
-                        <td style="color: var(--gold);">High (Tension Core)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- IMAGE SECTION 3: Cozy Weave Techniques -->
-        <section class="editorial-detail-block">
-            <div class="editorial-detail-text">
-                <p class="eyebrow" style="color: var(--gold); font-family: var(--font-mono); font-size: 10px; margin-bottom: 12px;">[ STUDY 03 // LEATHER ATELIER ]</p>
-                <h3>Saddle Stitching & Strap Seals</h3>
-                <p>
-                    We sew watch straps and pocket dividers by hand, using double needle saddle stitching to prevent seams from splitting.
-                </p>
-                <p>
-                    We publish guidelines on thread tensions, seam pull tolerances, and mitered corner reinforcement layers to protect watch bands.
-                </p>
-                <a class="cta-link" href="contact.html">Request Consultation &rarr;</a>
-            </div>
-            <div class="editorial-detail-frame">
-                <img src="assets/img/blog_finish.jpg" alt="Close up of leather pattern stitching with waxed flax cord">
-            </div>
-        </section>
-
-        <!-- Featured Logs Section (TABBED PORTFOLIO GRID - AVONE STYLE) -->
-        <section style="border-top: var(--border); padding-top: 50px;">
-            <div class="section-header">
-                <p class="eyebrow">[ FILTERABLE STUDIES // DISPATCHES ]</p>
-                <h2>Featured Horology Logs</h2>
-            </div>
-            
-            <!-- Category Tabs (AVONE STYLE) -->
-            <div class="tab-nav">
-                <button class="tab-btn active" data-filter="all">All Weaves</button>
-                <button class="tab-btn" data-filter="weaving">Loom Weaving</button>
-                <button class="tab-btn" data-filter="dyeing">Organic Dyeing</button>
-                <button class="tab-btn" data-filter="comfort">Watch Comfort</button>
-            </div>
-
-            <!-- Filterable Tab Grid -->
-            <div class="tab-grid">
-                <article class="tab-card" data-category="weaving">
-                    <div class="tab-card-img">
-                        <img src="assets/img/blog_quilt.jpg" alt="Weaving Densities: Handbag Warp Calibration">
+            <!-- About Category Items List Start -->
+            <div class="about-category-items-list">
+                <div class="about-category-item">
+                    <div class="about-category-item-image">
+                        <figure>
+                            <img src="assets/img/hero.jpg" alt="Watches For Him">
+                        </figure>
                     </div>
-                    <div>
-                        <span class="meta">Cotton Canvas // Loom Density</span>
-                        <h4>Weaving Densities: Handbag Warp Calibration</h4>
-                        <p>How we analyze cotton canvas fiber counts and calculate loom shuttle speeds to weave durable, fluid study handbags.</p>
+                    <div class="about-category-item-body">
+                        <div class="about-category-item-content">
+                            <span>Watches</span>
+                            <h2>For Him</h2>
+                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
+                        </div>
+                        <div class="about-category-item-btn">
+                            <a href="blog.html" class="btn-default btn-highlighted">Shop Now</a>
+                        </div>
                     </div>
-                    <a href="blog/organic-handbag-weaving-density.html">View Log study &rarr;</a>
-                </article>
+                </div>
 
-                <article class="tab-card" data-category="dyeing">
-                    <div class="tab-card-img">
-                        <img src="assets/img/blog_dye.jpg" alt="Vat Dyeing: Indigo Fermentation & Purse Colors">
+                <div class="about-category-item">
+                    <div class="about-category-item-image">
+                        <figure>
+                            <img src="assets/img/design.jpg" alt="Watches For Her">
+                        </figure>
                     </div>
-                    <div>
-                        <span class="meta">Organic Indigo // Vat Chemistry</span>
-                        <h4>Vat Dyeing: Indigo Fermentation & Purse Colors</h4>
-                        <p>Analyzing pH fermentation levels and oxygen reactions to build lasting, chemical-free indigo blue colors on book covers.</p>
+                    <div class="about-category-item-body">
+                        <div class="about-category-item-content">
+                            <span>Watches</span>
+                            <h2>For Her</h2>
+                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
+                        </div>
+                        <div class="about-category-item-btn">
+                            <a href="blog.html" class="btn-default btn-highlighted">Shop Now</a>
+                        </div>
                     </div>
-                    <a href="blog/plant-based-indigo-purse-dyeing.html">View Log study &rarr;</a>
-                </article>
-
-                <article class="tab-card" data-category="comfort">
-                    <div class="tab-card-img">
-                        <img src="assets/img/blog_bed.jpg" alt="Space Ergonomics: Bag Lining & Placement">
-                    </div>
-                    <div>
-                        <span class="meta">Watch Comfort // Ergonomics</span>
-                        <h4>Space Ergonomics: Bag Lining & Placement</h4>
-                        <p>How pockets alignment margins, bag interior clearances, and fabric friction coefficients control user carry comfort.</p>
-                    </div>
-                    <a href="blog/bag-interior-textile-ergonomics.html">View Log study &rarr;</a>
-                </article>
+                </div>
             </div>
-        </section>
-    </main>
+            <!-- About Category Items List End -->
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Our Collection Section Start -->
+    <section class="our-collection">
+        <div class="container">
+            <div class="section-title-center">
+                <span class="section-sub-title">Explore Our Collection</span>
+                <h2>A perfect blend of innovation</h2>
+                <p>Discover a collection of watches designed with precision and elegance. Each timepiece reflects our commitment to quality, offering a seamless combination.</p>
+            </div>
+
+            <div class="row">
+                <div class="collection-item">
+                    <div class="collection-item-image">
+                        <figure>
+                            <img src="assets/img/blog_quilt.jpg" alt="Sports Watches">
+                        </figure>
+                    </div>
+                    <div class="collection-item-body">
+                        <div class="collection-item-content">
+                            <h2><a href="blog.html">Sports Watches</a></h2>
+                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
+                        </div>
+                        <div class="collection-item-btn">
+                            <a href="blog.html" class="readmore-btn">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item">
+                    <div class="collection-item-image">
+                        <figure>
+                            <img src="assets/img/blog_dye.jpg" alt="Luxury Watches">
+                        </figure>
+                    </div>
+                    <div class="collection-item-body">
+                        <div class="collection-item-content">
+                            <h2><a href="blog.html">Luxury Watches</a></h2>
+                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
+                        </div>
+                        <div class="collection-item-btn">
+                            <a href="blog.html" class="readmore-btn">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item">
+                    <div class="collection-item-image">
+                        <figure>
+                            <img src="assets/img/blog_bed.jpg" alt="Chronograph Watches">
+                        </figure>
+                    </div>
+                    <div class="collection-item-body">
+                        <div class="collection-item-content">
+                            <h2><a href="blog.html">Chronograph Watches</a></h2>
+                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
+                        </div>
+                        <div class="collection-item-btn">
+                            <a href="blog.html" class="readmore-btn">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-satisfy-img">
+                <div class="satisfy-client-images">
+                    <div class="satisfy-client-image">
+                        <img src="assets/img/hero.jpg" alt="Avatar">
+                    </div>
+                    <div class="satisfy-client-image add-more">✓</div>
+                </div>
+                <p>Let's make something great work together. <a href="blog.html" style="color: var(--primary); font-weight: 700;">View our Collection</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Our Collection Section End -->
+
+    <!-- Our Product Section Start -->
+    <section class="our-products">
+        <div class="container">
+            <div class="row section-row" style="margin-bottom: 50px;">
+                <div class="section-title">
+                    <span class="section-sub-title">Best Products</span>
+                    <h2>Timeless watches design for modern living</h2>
+                </div>
+                <div class="section-content-btn">
+                    <p style="color: var(--text-muted);">Crafted with precision and elegance, our watches blend timeless design with modern functionality to complement every lifestyle.</p>
+                    <a href="blog.html" class="btn-default">View All Products</a>
+                </div>
+            </div>
+
+            <!-- Product Grid Start -->
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-header">
+                        <div class="product-item-image">
+                            <img src="assets/img/blog_cotton.jpg" alt="Classic Silver Dial Watch">
+                        </div>
+                    </div>
+                    <div class="product-item-body">
+                        <div class="product-item-content">
+                            <p class="product-item-category">Premium Watch</p>
+                            <h2 class="product-item-title"><a href="blog.html">Classic Silver Dial Watch</a></h2>
+                            <div class="product-item-rating">★ ★ ★ ★ ★ <b>(4.9)</b></div>
+                        </div>
+                        <div class="product-item-price">
+                            <h2>₹4,999.00</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-item-header">
+                        <div class="product-item-image">
+                            <img src="assets/img/blog_stitching.jpg" alt="Black Chronograph Pro">
+                        </div>
+                    </div>
+                    <div class="product-item-body">
+                        <div class="product-item-content">
+                            <p class="product-item-category">Premium Watch</p>
+                            <h2 class="product-item-title"><a href="blog.html">Black Chronograph Pro</a></h2>
+                            <div class="product-item-rating">★ ★ ★ ★ ★ <b>(4.9)</b></div>
+                        </div>
+                        <div class="product-item-price">
+                            <h2>₹6,999.00</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-item-header">
+                        <div class="product-item-image">
+                            <img src="assets/img/blog_tensile.jpg" alt="Automatic Skeleton Watch">
+                        </div>
+                    </div>
+                    <div class="product-item-body">
+                        <div class="product-item-content">
+                            <p class="product-item-category">Premium Watch</p>
+                            <h2 class="product-item-title"><a href="blog.html">Automatic Skeleton Watch</a></h2>
+                            <div class="product-item-rating">★ ★ ★ ★ ★ <b>(4.9)</b></div>
+                        </div>
+                        <div class="product-item-price">
+                            <h2>₹12,499.00</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-item-header">
+                        <div class="product-item-image">
+                            <img src="assets/img/blog_harvest.jpg" alt="Aurex Royal Gold Edition">
+                        </div>
+                    </div>
+                    <div class="product-item-body">
+                        <div class="product-item-content">
+                            <p class="product-item-category">Luxury Watch</p>
+                            <h2 class="product-item-title"><a href="blog.html">Aurex Royal Gold Edition</a></h2>
+                            <div class="product-item-rating">★ ★ ★ ★ ★ <b>(4.9)</b></div>
+                        </div>
+                        <div class="product-item-price">
+                            <h2>₹15,499.00</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-item-header">
+                        <div class="product-item-image">
+                            <img src="assets/img/blog_wool.jpg" alt="Titan Smartwatch Pro">
+                        </div>
+                    </div>
+                    <div class="product-item-body">
+                        <div class="product-item-content">
+                            <p class="product-item-category">Sports Watch</p>
+                            <h2 class="product-item-title"><a href="blog.html">Titan Smartwatch Pro</a></h2>
+                            <div class="product-item-rating">★ ★ ★ ★ ★ <b>(4.9)</b></div>
+                        </div>
+                        <div class="product-item-price">
+                            <h2>₹6,000.00</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-item-header">
+                        <div class="product-item-image">
+                            <img src="assets/img/blog_finish.jpg" alt="ChronoX Ultra Smart">
+                        </div>
+                    </div>
+                    <div class="product-item-body">
+                        <div class="product-item-content">
+                            <p class="product-item-category">Smartwatch</p>
+                            <h2 class="product-item-title"><a href="blog.html">ChronoX Ultra Smart</a></h2>
+                            <div class="product-item-rating">★ ★ ★ ★ ★ <b>(4.9)</b></div>
+                        </div>
+                        <div class="product-item-price">
+                            <h2>₹5,999.00</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Grid End -->
+
+            <div class="section-footer-text section-satisfy-img">
+                <div class="satisfy-client-images">
+                    <div class="satisfy-client-image">
+                        <img src="assets/img/hero.jpg" alt="Avatar">
+                    </div>
+                    <div class="satisfy-client-image add-more">✓</div>
+                </div>
+                <p>Let's make something great work together. <a href="contact.html" style="color: var(--primary); font-weight: 700;">Get Free Quote</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Our Product Section End -->
+
+    <!-- Intro Video Section Start -->
+    <section class="intro-video">
+        <div class="intro-video-content-box">
+            <div class="intro-video-bg-video">
+                <img src="assets/img/blog_loom.jpg" alt="Watchmaking Workbench background" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+            </div>
+            <div class="video-play-button">
+                <a href="contact.html">▶</a>
+            </div>
+        </div>
+    </section>
+    <!-- Intro Video Section End -->
+
+    <!-- Our Brands Section Start -->
+    <section class="our-brands">
+        <div class="container">
+            <div class="section-title-center">
+                <span class="section-sub-title">Shop By Brands</span>
+                <h2>Trusted brand, timeless style</h2>
+                <p>Each brand brings its own unique craftsmanship, ensuring you find a timepiece that perfectly matches your taste.</p>
+            </div>
+
+            <div class="row-brands">
+                <div class="brand-item">
+                    <div class="brand-item-image">
+                        <figure><img src="assets/img/blog_drape.jpg" alt="Brand 1"></figure>
+                    </div>
+                    <div class="brand-item-logo">
+                        <h4>Aurex</h4>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-item-image">
+                        <figure><img src="assets/img/blog_quilt.jpg" alt="Brand 2"></figure>
+                    </div>
+                    <div class="brand-item-logo">
+                        <h4>ChronoX</h4>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-item-image">
+                        <figure><img src="assets/img/blog_bed.jpg" alt="Brand 3"></figure>
+                    </div>
+                    <div class="brand-item-logo">
+                        <h4>Titan</h4>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-item-image">
+                        <figure><img src="assets/img/design.jpg" alt="Brand 4"></figure>
+                    </div>
+                    <div class="brand-item-logo">
+                        <h4>Royal</h4>
+                    </div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-item-image">
+                        <figure><img src="assets/img/hero.jpg" alt="Brand 5"></figure>
+                    </div>
+                    <div class="brand-item-logo">
+                        <h4>Elite</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer-text" style="text-align: center; margin-top: 30px;">
+                <p><span>Free</span> Explore the World's Finest Watch Brands - <a href="blog.html" style="color: var(--primary); font-weight: 700;">Find Your Perfect Match Today</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Our Brands Section End -->
+
+    <!-- New Arrivals Section Start -->
+    <section class="new-arrivals">
+        <div class="container">
+            <div class="row section-row" style="margin-bottom: 50px;">
+                <div class="section-title">
+                    <span class="section-sub-title">New Arrivals</span>
+                    <h2>Introducing new watches that redefine modern</h2>
+                </div>
+                <div class="section-content-btn">
+                    <p style="color: var(--text-muted);">Crafted with attention to detail, these watches are made to complement your style while offering lasting quality.</p>
+                    <a href="blog.html" class="btn-default">View All Arrivals</a>
+                </div>
+            </div>
+
+            <div class="new-arrivals-grid">
+                <div class="new-arrival-item">
+                    <div class="new-arrival-item-image">
+                        <figure><img src="assets/img/blog_drape.jpg" alt="Royal Chrono Masterpiece"></figure>
+                    </div>
+                    <div class="new-arrival-item-content">
+                        <ul><li>Luxury</li></ul>
+                        <h2><a href="blog.html">Royal Chrono Masterpiece</a></h2>
+                    </div>
+                </div>
+
+                <div class="new-arrival-item">
+                    <div class="new-arrival-item-image">
+                        <figure><img src="assets/img/blog_harvest.jpg" alt="Classic Gold Heritage"></figure>
+                    </div>
+                    <div class="new-arrival-item-content">
+                        <ul><li>Formal</li></ul>
+                        <h2><a href="blog.html">Classic Gold Heritage</a></h2>
+                    </div>
+                </div>
+
+                <div class="new-arrival-item">
+                    <div class="new-arrival-item-image">
+                        <figure><img src="assets/img/blog_packing.jpg" alt="Elite Black Edition Watch"></figure>
+                    </div>
+                    <div class="new-arrival-item-content">
+                        <ul><li>Premium</li></ul>
+                        <h2><a href="blog.html">Elite Black Edition Watch</a></h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer-text" style="text-align: center; margin-top: 30px;">
+                <p><span>Free</span> Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
+            </div>
+        </div>
+    </section>
+    <!-- New Arrivals Section End -->
+
+    <!-- Latest Updates Section Start -->
+    <section class="latest-updates">
+        <div class="container">
+            <div class="section-title-center">
+                <span class="section-sub-title">Follow Us On Social</span>
+                <h2>Explore our latest updates</h2>
+                <p>Stay up to date with our latest collections, exclusive offers, and style inspiration. Follow us to never miss what’s new and trending.</p>
+            </div>
+
+            <div class="latest-update-video-list">
+                <div class="latest-update-video">
+                    <img src="assets/img/blog_wool.jpg" alt="Social Update 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="latest-update-video">
+                    <img src="assets/img/blog_tensile.jpg" alt="Social Update 2" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="latest-update-video">
+                    <img src="assets/img/blog_finish.jpg" alt="Social Update 3" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Updates Section End -->
 
     <footer>
         <div class="footer-grid">
@@ -258,5 +589,14 @@
     </footer>
 
     <script src="assets/app.js"></script>
+    <script>
+        // Preloader Fade Out
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('fade-out');
+            }
+        });
+    </script>
 </body>
 </html>
